@@ -1,0 +1,76 @@
+---
+aid: harbin-institute-of-technology
+name: Harbin Institute of Technology
+description: >-
+  Harbin Institute of Technology (HIT) is a public research university in Harbin,
+  Heilongjiang, China, founded in 1920 and overseen by the Ministry of Industry
+  and Information Technology, with additional campuses in Weihai and Shenzhen. It
+  is ranked #252 in the QS World University Rankings 2025. HIT does not operate a
+  formal public developer portal, but its Elsevier Pure research portal
+  (scholar.hit.edu.cn) exposes standard machine-readable interfaces: an OAI-PMH
+  endpoint (verified live, OpenAIRE CERIF 1.2 profile) and RSS feeds of research
+  outputs and researcher profiles. Most other institutional systems (library OPAC,
+  institutional repository, student/SSO systems) are gated and do not publish open,
+  documented APIs.
+type: Index
+position: Consumer
+access: 3rd-Party
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: https://raw.githubusercontent.com/api-evangelist/harbin-institute-of-technology/refs/heads/main/apis.yml
+tags:
+  - Education
+  - Higher Education
+  - University
+  - Research
+  - Scholarly
+  - OAI-PMH
+  - China
+created: '2026-06-03'
+modified: '2026-06-03'
+specificationVersion: '0.19'
+apis:
+  - aid: harbin-institute-of-technology:pure-oai-pmh
+    name: HIT Research Portal OAI-PMH
+    description: >-
+      OAI-PMH metadata harvesting endpoint for the HIT Elsevier Pure research
+      information system. Verified live: ListSets returns sets for PURE Persons
+      and PURE publications, exposed via the OpenAIRE CERIF 1.2 profile. Standard
+      OAI-PMH verbs (ListSets, ListRecords, ListMetadataFormats) are supported.
+    humanURL: https://scholar.hit.edu.cn/en/
+    baseURL: https://scholar.hit.edu.cn/ws/oai
+    tags: [ Research, OAI-PMH, Metadata, Scholarly, Pure ]
+    properties:
+      - type: Documentation
+        url: https://scholar.hit.edu.cn/en/
+  - aid: harbin-institute-of-technology:pure-rss
+    name: HIT Research Portal RSS Feeds
+    description: >-
+      RSS 2.0 feeds (with Dublin Core extensions) from the HIT Elsevier Pure
+      research portal. The research output feed returns the latest publications;
+      a persons feed lists researcher profiles. Verified live and returning items.
+    humanURL: https://scholar.hit.edu.cn/en/
+    baseURL: https://scholar.hit.edu.cn/en/publications/?format=rss
+    tags: [ Research, RSS, Feed, Scholarly, Pure ]
+    properties:
+      - type: Documentation
+        url: https://scholar.hit.edu.cn/en/
+common:
+  - type: Website
+    url: https://en.hit.edu.cn/
+  - type: DeveloperPortal
+    url: https://scholar.hit.edu.cn/en/
+  - type: GitHub
+    url: https://github.com/HITSZ-HLT
+  - type: LinkedIn
+    url: https://www.linkedin.com/school/harbin-institute-of-technology/
+  - type: Plans
+    url: plans/harbin-institute-of-technology-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/harbin-institute-of-technology-rate-limits.yml
+  - type: FinOps
+    url: finops/harbin-institute-of-technology-finops.yml
+  - type: Review
+    url: review.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

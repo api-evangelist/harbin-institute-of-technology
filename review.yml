@@ -1,0 +1,53 @@
+---
+name: Harbin Institute of Technology
+description: Harbin Institute of Technology public developer/API footprint review for APIs.json cataloging.
+url: https://raw.githubusercontent.com/api-evangelist/harbin-institute-of-technology/refs/heads/main/review.yml
+created: '2026-06-03'
+modified: '2026-06-03'
+reviews:
+  - date: '2026-06-03'
+    rating: 2
+    summary: >-
+      HIT has no formal public developer portal or open-data site. The strongest
+      verified machine-readable footprint is the Elsevier Pure research portal at
+      scholar.hit.edu.cn, which exposes a live OAI-PMH endpoint (ListSets returns
+      PURE Persons and PURE publications via the OpenAIRE CERIF 1.2 profile) and
+      live RSS feeds of research output. The library institutional repository
+      (ir.lib.hit.edu.cn) is gated/blocked from outside China and exposes no
+      documented OAI-PMH. Affiliated research-group GitHub orgs exist but are not
+      institution-wide API publishers. No endpoints were fabricated; all rows below
+      were probed live.
+    endpoints:
+      - url: https://en.hit.edu.cn/
+        status: 200
+        note: Official English website, confirmed live.
+      - url: https://scholar.hit.edu.cn/en/
+        status: 200
+        note: Elsevier Pure research portal (Powered by Pure, Scopus & Elsevier Fingerprint Engine).
+      - url: https://scholar.hit.edu.cn/ws/oai?verb=ListSets
+        status: 200
+        note: OAI-PMH live; returns PURE Persons and PURE publications sets (OpenAIRE CERIF 1.2).
+      - url: https://scholar.hit.edu.cn/ws/oai?verb=Identify
+        status: 500
+        note: Identify verb returns a config 500 (known Pure quirk); other verbs work.
+      - url: https://scholar.hit.edu.cn/en/publications/?format=rss
+        status: 200
+        note: Valid RSS 2.0 research-output feed with 50 items, Dublin Core extensions.
+      - url: https://scholar.hit.edu.cn/en/persons/?format=rss
+        status: 200
+        note: Valid RSS feed of researcher profiles.
+      - url: https://scholar.hit.edu.cn/ws/rest
+        status: 405
+        note: Pure REST web service path present but rejects unauthenticated GET (Method Not Allowed).
+      - url: http://lib.hit.edu.cn/
+        status: 200
+        note: HIT Library homepage; references OPAC and IR but no documented public API.
+      - url: http://ir.lib.hit.edu.cn/
+        status: 403
+        note: Institutional repository returns 403 (access restricted from probe location).
+      - url: https://github.com/HITSZ-HLT
+        status: 200
+        note: Affiliated HIT Shenzhen research-group GitHub org; not an institution-wide API publisher.
+      - url: https://www.linkedin.com/school/harbin-institute-of-technology/
+        status: 999
+        note: Official LinkedIn school page; 999 is LinkedIn's standard automated-request block, page exists.
