@@ -1,0 +1,15 @@
+{
+  "size": 25,
+  "offset": 0,
+  "orderings": [
+    "-publicationYear"
+  ],
+  "publishedBeforeDate": "2025-12-31",
+  "publishedAfterDate": "2024-01-01",
+  "forJournals": {
+    "uuids": []
+  },
+  "workflowSteps": [
+    "validated"
+  ]
+}

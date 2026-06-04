@@ -42,6 +42,16 @@ apis:
     properties:
       - type: Documentation
         url: https://scholar.hit.edu.cn/en/
+      - type: OpenAPI
+        url: openapi/harbin-institute-of-technology-pure.yaml
+      - type: JSONSchema
+        url: json-schema/harbin-institute-of-technology-research-output-schema.json
+      - type: x-vocabulary
+        url: vocabulary/harbin-institute-of-technology-vocabulary.yml
+      - type: x-rules
+        url: rules/harbin-institute-of-technology-rules.yml
+      - type: x-json-ld
+        url: json-ld/harbin-institute-of-technology-context.jsonld
   - aid: harbin-institute-of-technology:pure-rss
     name: HIT Research Portal RSS Feeds
     description: >-

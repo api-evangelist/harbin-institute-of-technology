@@ -1,0 +1,50 @@
+{
+  "count": 12450,
+  "pageInformation": {
+    "offset": 0,
+    "size": 2
+  },
+  "items": [
+    {
+      "uuid": "a1b2c3d4-0000-0000-0000-000000000001",
+      "title": {
+        "value": "Deep learning approaches for fault diagnosis in aerospace structures"
+      },
+      "type": {
+        "uri": "/dk/atira/pure/researchoutput/researchoutputtypes/contributiontojournal/article",
+        "term": {
+          "en_GB": "Article"
+        }
+      },
+      "category": {
+        "uri": "/dk/atira/pure/researchoutput/category/research",
+        "term": {
+          "en_GB": "Research"
+        }
+      },
+      "submissionYear": 2024,
+      "peerReview": true,
+      "publicationStatuses": [
+        {
+          "current": true,
+          "publicationStatus": {
+            "term": {
+              "en_GB": "Published"
+            }
+          },
+          "publicationDate": {
+            "year": 2024,
+            "month": 3
+          }
+        }
+      ],
+      "portalUrl": "https://scholar.hit.edu.cn/en/publications/a1b2c3d4-0000-0000-0000-000000000001",
+      "language": {
+        "uri": "/dk/atira/pure/core/languages/en",
+        "term": {
+          "en_GB": "English"
+        }
+      }
+    }
+  ]
+}

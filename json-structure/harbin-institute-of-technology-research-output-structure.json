@@ -1,0 +1,250 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/harbin-institute-of-technology/main/json-structure/harbin-institute-of-technology-research-output-structure.json",
+  "name": "HITResearchOutput",
+  "type": "object",
+  "description": "JSON Structure for a HIT Pure research output (publication).",
+  "properties": {
+    "pureId": {
+      "type": "int64",
+      "description": "Pure database ID of the object, prefer using the UUID if it is present on the entity"
+    },
+    "uuid": {
+      "type": "string",
+      "description": "UUID, this is the primary identity of the entity"
+    },
+    "createdBy": {
+      "type": "string",
+      "description": "Username of creator"
+    },
+    "createdDate": {
+      "type": "string",
+      "description": "Date and time of creation"
+    },
+    "modifiedBy": {
+      "type": "string",
+      "description": "Username of the user that performed a modification"
+    },
+    "modifiedDate": {
+      "type": "string",
+      "description": "Date and time of last modification"
+    },
+    "portalUrl": {
+      "type": "string",
+      "description": "URL of the content on the Pure Portal"
+    },
+    "prettyUrlIdentifiers": {
+      "type": "array",
+      "items": {
+        "type": "any"
+      }
+    },
+    "previousUuids": {
+      "type": "array",
+      "items": {
+        "type": "any"
+      }
+    },
+    "version": {
+      "type": "string",
+      "description": "Used to guard against conflicting updates. For new content this is null, and for existing content the current value. The property should never be modified by a client, except in the rare case where the client wants to perform an update irrespective of if other clients have made updates in the meantime, also known as a \"dirty write\". A dirty write is performed by not including the property value or setting the property to null"
+    },
+    "title": {
+      "type": "object"
+    },
+    "subTitle": {
+      "type": "object"
+    },
+    "type": {
+      "type": "object"
+    },
+    "category": {
+      "type": "object"
+    },
+    "peerReview": {
+      "type": "boolean",
+      "description": "Indicates whether the research output is peer reviewed or not. Query the /research-outputs/allowed-peer-review-configurations endpoint for allowed values."
+    },
+    "internationalPeerReview": {
+      "type": "boolean",
+      "description": "Indicates whether the research output is internationally peer reviewed or not. Query the /research-outputs/allowed-peer-review-configurations endpoint for allowed values."
+    },
+    "publicationStatuses": {
+      "type": "array",
+      "items": {
+        "type": "any"
+      }
+    },
+    "language": {
+      "type": "object"
+    },
+    "translatedTitle": {
+      "type": "object"
+    },
+    "translatedSubTitle": {
+      "type": "object"
+    },
+    "contributors": {
+      "type": "array",
+      "items": {
+        "type": "any"
+      }
+    },
+    "organizations": {
+      "type": "array",
+      "items": {
+        "type": "any"
+      }
+    },
+    "externalOrganizations": {
+      "type": "array",
+      "items": {
+        "type": "any"
+      }
+    },
+    "totalNumberOfContributors": {
+      "type": "int32",
+      "description": "The total number of authors from author collaborations."
+    },
+    "managingOrganization": {
+      "type": "object"
+    },
+    "submissionYear": {
+      "type": "int32",
+      "description": "The submission year of the research output."
+    },
+    "mainResearchArea": {
+      "type": "object"
+    },
+    "electronicVersions": {
+      "type": "array",
+      "items": {
+        "type": "any"
+      }
+    },
+    "additionalFiles": {
+      "type": "array",
+      "items": {
+        "type": "any"
+      }
+    },
+    "links": {
+      "type": "array",
+      "items": {
+        "type": "any"
+      }
+    },
+    "articleProcessingCharge": {
+      "type": "object"
+    },
+    "keywordGroups": {
+      "type": "array",
+      "items": {
+        "type": "any"
+      }
+    },
+    "bibliographicalNote": {
+      "type": "object"
+    },
+    "descriptions": {
+      "type": "array",
+      "items": {
+        "type": "any"
+      }
+    },
+    "visibility": {
+      "type": "object"
+    },
+    "workflow": {
+      "type": "object"
+    },
+    "identifiers": {
+      "type": "array",
+      "items": {
+        "type": "any"
+      }
+    },
+    "prizes": {
+      "type": "array",
+      "items": {
+        "type": "any"
+      }
+    },
+    "pressMedias": {
+      "type": "array",
+      "items": {
+        "type": "any"
+      }
+    },
+    "dataSets": {
+      "type": "array",
+      "items": {
+        "type": "any"
+      }
+    },
+    "studentThesis": {
+      "type": "array",
+      "items": {
+        "type": "any"
+      }
+    },
+    "impacts": {
+      "type": "array",
+      "items": {
+        "type": "any"
+      }
+    },
+    "activities": {
+      "type": "array",
+      "items": {
+        "type": "any"
+      }
+    },
+    "equipment": {
+      "type": "array",
+      "items": {
+        "type": "any"
+      }
+    },
+    "projects": {
+      "type": "array",
+      "items": {
+        "type": "any"
+      }
+    },
+    "researchOutputs": {
+      "type": "array",
+      "items": {
+        "type": "any"
+      }
+    },
+    "customDefinedFields": {
+      "type": "object"
+    },
+    "images": {
+      "type": "array",
+      "items": {
+        "type": "any"
+      }
+    },
+    "fundingText": {
+      "type": "object"
+    },
+    "fundingDetails": {
+      "type": "array",
+      "items": {
+        "type": "any"
+      }
+    },
+    "abstract": {
+      "type": "object"
+    },
+    "systemName": {
+      "type": "string",
+      "description": "The content system name"
+    },
+    "typeDiscriminator": {
+      "type": "string"
+    }
+  }
+}

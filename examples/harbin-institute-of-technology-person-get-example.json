@@ -1,0 +1,31 @@
+{
+  "uuid": "f9e8d7c6-0000-0000-0000-000000000010",
+  "name": {
+    "firstName": "Wei",
+    "lastName": "Zhang"
+  },
+  "orcid": "0000-0002-1825-0097",
+  "orcidAuthenticated": true,
+  "startDateAsResearcher": "2010-09-01",
+  "portalUrl": "https://scholar.hit.edu.cn/en/persons/f9e8d7c6-0000-0000-0000-000000000010",
+  "staffOrganizationAssociations": [
+    {
+      "organization": {
+        "name": {
+          "value": "School of Astronautics"
+        }
+      },
+      "jobTitle": {
+        "term": {
+          "en_GB": "Professor"
+        }
+      },
+      "primaryAssociation": true
+    }
+  ],
+  "personExpertise": [
+    {
+      "value": "Spacecraft dynamics; structural health monitoring"
+    }
+  ]
+}

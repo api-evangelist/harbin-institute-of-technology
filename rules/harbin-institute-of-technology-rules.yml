@@ -1,0 +1,39 @@
+formats: [oas3]
+rules:
+  hit-info-contact:
+    description: API info object should include a contact for the HIT research portal.
+    given: $.info
+    severity: warn
+    then:
+      field: contact
+      function: truthy
+  hit-server-scholar-host:
+    description: Servers should point at the scholar.hit.edu.cn Pure web services host.
+    given: $.servers[*].url
+    severity: warn
+    then:
+      function: pattern
+      functionOptions:
+        match: scholar\.hit\.edu\.cn|/ws/api
+  hit-apikey-security:
+    description: Pure API requires api-key header security.
+    given: $.components.securitySchemes
+    severity: warn
+    then:
+      field: apiKey
+      function: truthy
+  hit-list-result-shape:
+    description: List result schemas should expose count and items, matching Pure conventions.
+    given: $.components.schemas[?(@property.match(/ListResult$/))].properties
+    severity: warn
+    then:
+    - field: count
+      function: truthy
+    - field: items
+      function: truthy
+  hit-uuid-path-param:
+    description: Single-resource paths use a uuid path parameter.
+    given: $.paths[?(@property.match(/{uuid}$/))]
+    severity: info
+    then:
+      function: truthy

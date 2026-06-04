@@ -1,0 +1,34 @@
+{
+  "@context": {
+    "@vocab": "https://scholar.hit.edu.cn/ns#",
+    "schema": "https://schema.org/",
+    "pure": "https://scholar.hit.edu.cn/ns#",
+    "University": "schema:CollegeOrUniversity",
+    "name": "schema:name",
+    "url": "schema:url",
+    "ResearchOutput": "schema:ScholarlyArticle",
+    "Person": "schema:Person",
+    "title": "schema:headline",
+    "submissionYear": {
+      "@id": "schema:datePublished"
+    },
+    "portalUrl": {
+      "@id": "schema:url",
+      "@type": "@id"
+    },
+    "orcid": {
+      "@id": "https://schema.org/identifier"
+    },
+    "contributors": "schema:author",
+    "organizations": "schema:affiliation",
+    "language": "schema:inLanguage",
+    "uuid": "schema:identifier",
+    "keywordGroups": "schema:keywords",
+    "publisher": {
+      "@id": "schema:publisher",
+      "@type": "schema:CollegeOrUniversity",
+      "name": "Harbin Institute of Technology",
+      "url": "https://en.hit.edu.cn/"
+    }
+  }
+}

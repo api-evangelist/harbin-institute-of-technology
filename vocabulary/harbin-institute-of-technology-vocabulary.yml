@@ -1,0 +1,76 @@
+vocabulary:
+  name: HIT Research Portal (Pure) Vocabulary
+  description: Controlled terms observed in the Harbin Institute of Technology Elsevier Pure research portal API (research
+    outputs and persons) and its OAI-PMH/RSS interfaces.
+  version: 1.0.0
+  terms:
+  - term: research output
+    definition: A scholarly publication or other research product recorded in Pure (article, conference paper, thesis, patent,
+      dataset, etc.).
+    tags:
+    - publication
+    - scholarly
+    - pure
+  - term: person
+    definition: A researcher or staff member with a profile in the Pure research information system.
+    tags:
+    - researcher
+    - profile
+    - pure
+  - term: uuid
+    definition: Universally unique identifier assigned by Pure to each resource and used in single-resource API paths.
+    tags:
+    - identifier
+    - pure
+  - term: pureId
+    definition: Internal numeric identifier for a record within the Pure instance.
+    tags:
+    - identifier
+    - pure
+  - term: organization
+    definition: An organizational unit (school, department, lab) that a person or output is affiliated with.
+    tags:
+    - affiliation
+    - pure
+  - term: submission year
+    definition: The year a research output was submitted or published.
+    tags:
+    - date
+    - publication
+  - term: orcid
+    definition: ORCID identifier linking a Pure person profile to the global researcher identifier registry.
+    tags:
+    - identifier
+    - researcher
+    - orcid
+  - term: workflow step
+    definition: Editorial/curation state of a record in Pure (e.g. entry in progress, for validation, validated).
+    tags:
+    - workflow
+    - curation
+    - pure
+  - term: portal URL
+    definition: Public-facing URL of a record on the scholar.hit.edu.cn research portal.
+    tags:
+    - url
+    - portal
+  - term: OAI-PMH
+    definition: Open Archives Initiative Protocol for Metadata Harvesting endpoint exposed at /ws/oai for harvesting persons
+      and publications.
+    tags:
+    - oai-pmh
+    - metadata
+    - harvesting
+  - term: CERIF
+    definition: Common European Research Information Format; the OpenAIRE CERIF 1.2 metadata profile exposed via the OAI-PMH
+      interface.
+    tags:
+    - cerif
+    - metadata
+    - openaire
+  - term: electronic version
+    definition: A downloadable or linkable digital version of a research output with an access type (open/closed/embargoed).
+    tags:
+    - open-access
+    - file
+    - publication
