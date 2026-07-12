@@ -1,0 +1,16 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/harbin-institute-of-technology-pure.yaml
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - header
+schemes:
+- name: apiKey
+  type: apiKey
+  in: header
+  parameter: api-key
+  description: Pure API key. The HIT instance requires an issued key for API access.
+  sources:
+  - openapi/harbin-institute-of-technology-pure.yaml

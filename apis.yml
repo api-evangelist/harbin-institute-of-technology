@@ -65,6 +65,12 @@ apis:
       - type: Documentation
         url: https://scholar.hit.edu.cn/en/
 common:
+  - type: VulnerabilityDisclosure
+    url: security/harbin-institute-of-technology-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/harbin-institute-of-technology-domain-security.yml
+  - type: Authentication
+    url: authentication/harbin-institute-of-technology-authentication.yml
   - type: Website
     url: https://en.hit.edu.cn/
   - type: DeveloperPortal
