@@ -1,0 +1,382 @@
+openapi: 3.0.3
+info:
+  title: HIT Research Portal (Pure) person researchOutput API
+  description: Subset of the Elsevier Pure web services API exposed by the Harbin Institute of Technology research portal (scholar.hit.edu.cn). Covers read access to research outputs (publications) and persons (researchers). Derived faithfully from the live Pure OpenAPI document at /ws/api/openapi.json; deeply nested supporting schemas are simplified to generic objects. Original Pure API version 5.35.3-4.
+  version: 5.35.3-4
+  contact:
+    name: Harbin Institute of Technology Research Portal
+    url: https://scholar.hit.edu.cn/en/
+servers:
+- url: https://scholar.hit.edu.cn/ws/api
+  description: HIT Pure web services API
+security:
+- apiKey: []
+tags:
+- name: researchOutput
+paths:
+  /research-outputs:
+    get:
+      summary: Lists all research outputs
+      description: Lists all research outputs in the Pure instance. If you need to filter the research outputs returned, see the POST version which supports additional filtering.
+      operationId: researchOutput_list
+      tags:
+      - researchOutput
+      parameters:
+      - name: size
+        in: query
+        description: Number of returned research outputs per request.
+        schema:
+          type: integer
+          format: int32
+      - name: offset
+        in: query
+        description: The offset for the returned list. 0 or null value is from the start
+        schema:
+          type: integer
+          format: int32
+      - name: order
+        in: query
+        description: The order of the list, must be a value from /research-outputs/orderings
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResearchOutputListResult'
+    put:
+      summary: Create research output
+      description: Create research output
+      operationId: researchOutput_create
+      tags:
+      - researchOutput
+      responses:
+        '201':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResearchOutput'
+        '400':
+          description: Bad Request
+  /research-outputs/search:
+    post:
+      summary: Query operation for research outputs
+      description: Lists research outputs in the Pure instance that matches the provided query, similar to the GET version, instead of using parameters to alter the response, an JSON document is posted with the request. The JSON document contains fields for all the parameters available for the GET version, but also ad
+      operationId: researchOutput_query
+      tags:
+      - researchOutput
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResearchOutputListResult'
+        '400':
+          description: Bad request
+  /research-outputs/{uuid}:
+    get:
+      summary: Get research output
+      description: Get research output with specific UUID.
+      operationId: researchOutput_get
+      tags:
+      - researchOutput
+      parameters:
+      - name: uuid
+        in: path
+        required: true
+        description: UUID of the desired research output
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResearchOutput'
+        '301':
+          description: The requested content have changed UUID
+        '404':
+          description: Resource not found
+          content:
+            application/json:
+              schema:
+                type: object
+    put:
+      summary: Update research output
+      description: Update research output with specific UUID.
+      operationId: researchOutput_update
+      tags:
+      - researchOutput
+      parameters:
+      - name: uuid
+        in: path
+        required: true
+        description: UUID of the research output to update
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResearchOutput'
+        '400':
+          description: Bad Request
+        '404':
+          description: Resource not found
+        '409':
+          description: Version conflict
+    delete:
+      summary: Delete research output
+      description: Delete research output with specific UUID.
+      operationId: researchOutput_delete
+      tags:
+      - researchOutput
+      parameters:
+      - name: uuid
+        in: path
+        required: true
+        description: UUID of the research output
+        schema:
+          type: string
+          format: uuid
+      responses:
+        '204':
+          description: Successful operation
+        '404':
+          description: Resource not found
+        '409':
+          description: Conflict
+  /research-outputs/allowed-types:
+    get:
+      summary: A list of allowed research output types
+      description: Get a list of allowed types that can be used for the 'type' attribute of research outputs
+      operationId: researchOutput_getAllowedTypes
+      tags:
+      - researchOutput
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+  /research-outputs/orderings:
+    get:
+      summary: Lists available orderings
+      description: Lists all orderings available to the research output endpoint. These values can be used by the order parameter.
+      operationId: researchOutput_getOrderings
+      tags:
+      - researchOutput
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+components:
+  schemas:
+    ResearchOutput:
+      type: object
+      description: Research output exists in many variations, from written to non-textual form. Templates are available for a range of these variations.
+      properties:
+        pureId:
+          type: integer
+          format: int64
+          description: Pure database ID of the object, prefer using the UUID if it is present on the entity
+        uuid:
+          type: string
+          format: uuid
+          description: UUID, this is the primary identity of the entity
+        createdBy:
+          type: string
+          description: Username of creator
+        createdDate:
+          type: string
+          format: date-time
+          description: Date and time of creation
+        modifiedBy:
+          type: string
+          description: Username of the user that performed a modification
+        modifiedDate:
+          type: string
+          format: date-time
+          description: Date and time of last modification
+        portalUrl:
+          type: string
+          description: URL of the content on the Pure Portal
+        prettyUrlIdentifiers:
+          type: array
+          items:
+            type: string
+        previousUuids:
+          type: array
+          items:
+            type: string
+        version:
+          type: string
+          description: Used to guard against conflicting updates. For new content this is null, and for existing content the current value. The property should never be modified by a client, except in the rare case where th
+        title:
+          type: object
+        subTitle:
+          type: object
+        type:
+          type: object
+        category:
+          type: object
+        peerReview:
+          type: boolean
+          description: Indicates whether the research output is peer reviewed or not. Query the /research-outputs/allowed-peer-review-configurations endpoint for allowed values.
+        internationalPeerReview:
+          type: boolean
+          description: Indicates whether the research output is internationally peer reviewed or not. Query the /research-outputs/allowed-peer-review-configurations endpoint for allowed values.
+        publicationStatuses:
+          type: array
+          items:
+            type: object
+        language:
+          type: object
+        translatedTitle:
+          type: object
+        translatedSubTitle:
+          type: object
+        contributors:
+          type: array
+          items:
+            type: object
+        organizations:
+          type: array
+          items:
+            type: object
+        externalOrganizations:
+          type: array
+          items:
+            type: object
+        totalNumberOfContributors:
+          type: integer
+          format: int32
+          description: The total number of authors from author collaborations.
+        managingOrganization:
+          type: object
+        submissionYear:
+          type: integer
+          format: int32
+          description: The submission year of the research output.
+        mainResearchArea:
+          type: object
+        electronicVersions:
+          type: array
+          items:
+            type: object
+        additionalFiles:
+          type: array
+          items:
+            type: object
+        links:
+          type: array
+          items:
+            type: object
+        articleProcessingCharge:
+          type: object
+        keywordGroups:
+          type: array
+          items:
+            type: object
+        bibliographicalNote:
+          type: object
+        descriptions:
+          type: array
+          items:
+            type: object
+        visibility:
+          type: object
+        workflow:
+          type: object
+        identifiers:
+          type: array
+          items:
+            type: object
+        prizes:
+          type: array
+          items:
+            type: object
+        pressMedias:
+          type: array
+          items:
+            type: object
+        dataSets:
+          type: array
+          items:
+            type: object
+        studentThesis:
+          type: array
+          items:
+            type: object
+        impacts:
+          type: array
+          items:
+            type: object
+        activities:
+          type: array
+          items:
+            type: object
+        equipment:
+          type: array
+          items:
+            type: object
+        projects:
+          type: array
+          items:
+            type: object
+        researchOutputs:
+          type: array
+          items:
+            type: object
+        customDefinedFields:
+          type: object
+        images:
+          type: array
+          items:
+            type: object
+        fundingText:
+          type: object
+        fundingDetails:
+          type: array
+          items:
+            type: object
+        abstract:
+          type: object
+        systemName:
+          type: string
+          description: The content system name
+        typeDiscriminator:
+          type: string
+    ResearchOutputListResult:
+      type: object
+      properties:
+        count:
+          type: integer
+          format: int64
+          description: Total number of items.
+        pageInformation:
+          type: object
+          description: Pagination info.
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/ResearchOutput'
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      in: header
+      name: api-key
+      description: Pure API key. The HIT instance requires an issued key for API access.
