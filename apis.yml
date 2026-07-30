@@ -13,9 +13,22 @@ description: >-
   institutional repository, student/SSO systems) are gated and do not publish open,
   documented APIs.
 type: Index
+accessModel:
+  pricing: free
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Free · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 position: Consumer
 access: 3rd-Party
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/harbin-institute-of-technology.png
 url: https://raw.githubusercontent.com/api-evangelist/harbin-institute-of-technology/refs/heads/main/apis.yml
 tags:
   - Education
@@ -29,41 +42,64 @@ created: '2026-06-03'
 modified: '2026-06-03'
 specificationVersion: '0.19'
 apis:
-  - aid: harbin-institute-of-technology:pure-oai-pmh
-    name: HIT Research Portal OAI-PMH
-    description: >-
-      OAI-PMH metadata harvesting endpoint for the HIT Elsevier Pure research
-      information system. Verified live: ListSets returns sets for PURE Persons
-      and PURE publications, exposed via the OpenAIRE CERIF 1.2 profile. Standard
-      OAI-PMH verbs (ListSets, ListRecords, ListMetadataFormats) are supported.
-    humanURL: https://scholar.hit.edu.cn/en/
-    baseURL: https://scholar.hit.edu.cn/ws/oai
-    tags: [ Research, OAI-PMH, Metadata, Scholarly, Pure ]
-    properties:
-      - type: Documentation
-        url: https://scholar.hit.edu.cn/en/
-      - type: OpenAPI
-        url: openapi/harbin-institute-of-technology-pure.yaml
-      - type: JSONSchema
-        url: json-schema/harbin-institute-of-technology-research-output-schema.json
-      - type: x-vocabulary
-        url: vocabulary/harbin-institute-of-technology-vocabulary.yml
-      - type: x-rules
-        url: rules/harbin-institute-of-technology-rules.yml
-      - type: x-json-ld
-        url: json-ld/harbin-institute-of-technology-context.jsonld
-  - aid: harbin-institute-of-technology:pure-rss
-    name: HIT Research Portal RSS Feeds
-    description: >-
-      RSS 2.0 feeds (with Dublin Core extensions) from the HIT Elsevier Pure
-      research portal. The research output feed returns the latest publications;
-      a persons feed lists researcher profiles. Verified live and returning items.
-    humanURL: https://scholar.hit.edu.cn/en/
-    baseURL: https://scholar.hit.edu.cn/en/publications/?format=rss
-    tags: [ Research, RSS, Feed, Scholarly, Pure ]
-    properties:
-      - type: Documentation
-        url: https://scholar.hit.edu.cn/en/
+- aid: harbin-institute-of-technology:pure-rss
+  name: HIT Research Portal RSS Feeds
+  description: >-
+    RSS 2.0 feeds (with Dublin Core extensions) from the HIT Elsevier Pure research portal. The research
+    output feed returns the latest publications; a persons feed lists researcher profiles. Verified live
+    and returning items.
+  humanURL: https://scholar.hit.edu.cn/en/
+  baseURL: https://scholar.hit.edu.cn/en/publications/?format=rss
+  tags:
+  - Research
+  - RSS
+  - Feed
+  - Scholarly
+  - Pure
+  properties:
+  - type: Documentation
+    url: https://scholar.hit.edu.cn/en/
+- aid: harbin-institute-of-technology:harbin-institute-of-technology-person-api
+  name: Harbin Institute of Technology person API
+  description: The person API from Harbin Institute of Technology — 5 operation(s) for person.
+  humanURL: https://scholar.hit.edu.cn/en/
+  baseURL: https://scholar.hit.edu.cn/ws/oai
+  tags:
+  - person
+  properties:
+  - type: OpenAPI
+    url: openapi/harbin-institute-of-technology-person-api-openapi.yml
+  - type: Documentation
+    url: https://scholar.hit.edu.cn/en/
+  - type: JSONSchema
+    url: json-schema/harbin-institute-of-technology-research-output-schema.json
+  - type: x-vocabulary
+    url: vocabulary/harbin-institute-of-technology-vocabulary.yml
+  - type: x-rules
+    url: rules/harbin-institute-of-technology-rules.yml
+  - type: x-json-ld
+    url: json-ld/harbin-institute-of-technology-context.jsonld
+- aid: harbin-institute-of-technology:harbin-institute-of-technology-researchoutput-api
+  name: Harbin Institute of Technology researchOutput API
+  description: >-
+    The researchOutput API from Harbin Institute of Technology — 5 operation(s) for researchoutput.
+  humanURL: https://scholar.hit.edu.cn/en/
+  baseURL: https://scholar.hit.edu.cn/ws/oai
+  tags:
+  - researchOutput
+  properties:
+  - type: OpenAPI
+    url: openapi/harbin-institute-of-technology-researchoutput-api-openapi.yml
+  - type: Documentation
+    url: https://scholar.hit.edu.cn/en/
+  - type: JSONSchema
+    url: json-schema/harbin-institute-of-technology-research-output-schema.json
+  - type: x-vocabulary
+    url: vocabulary/harbin-institute-of-technology-vocabulary.yml
+  - type: x-rules
+    url: rules/harbin-institute-of-technology-rules.yml
+  - type: x-json-ld
+    url: json-ld/harbin-institute-of-technology-context.jsonld
 common:
   - type: AgenticAccess
     url: agentic-access/harbin-institute-of-technology-agentic-access.yml
