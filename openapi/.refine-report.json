@@ -1,0 +1,16 @@
+{
+  "provider": "harbin-institute-of-technology",
+  "sources": [
+    "harbin-institute-of-technology-person-api-openapi.yml",
+    "harbin-institute-of-technology-researchoutput-api-openapi.yml"
+  ],
+  "outputs": [
+    "harbin-institute-of-technology-person-api-openapi.yml",
+    "harbin-institute-of-technology-researchoutput-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
