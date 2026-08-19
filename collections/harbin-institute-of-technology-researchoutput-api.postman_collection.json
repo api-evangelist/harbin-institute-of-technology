@@ -1,0 +1,1174 @@
+{
+  "item": [
+    {
+      "id": "19254409-a64f-4ade-8cb6-a87bf9e83017",
+      "name": "researchOutput",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "dc249cf2-aefe-4d07-8d4b-6356ac5658fc",
+          "name": "Lists all research outputs",
+          "request": {
+            "name": "Lists all research outputs",
+            "description": {
+              "content": "Lists all research outputs in the Pure instance. If you need to filter the research outputs returned, see the POST version which supports additional filtering.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "research-outputs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "size",
+                  "value": "<integer>",
+                  "description": "Number of returned research outputs per request."
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "<integer>",
+                  "description": "The offset for the returned list. 0 or null value is from the start"
+                },
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "<string>",
+                  "description": "The order of the list, must be a value from /research-outputs/orderings"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b805f4b9-21b4-456a-9b20-cc66f1425955",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "research-outputs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "size",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "order",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 4559,\n  \"pageInformation\": {},\n  \"items\": [\n    {\n      \"pureId\": 824,\n      \"uuid\": \"944ede7a-8055-55a6-510c-97fc6371032d\",\n      \"createdBy\": \"string\",\n      \"createdDate\": \"1960-04-09T12:55:33.949Z\",\n      \"modifiedBy\": \"string\",\n      \"modifiedDate\": \"1968-12-14T01:56:05.181Z\",\n      \"portalUrl\": \"string\",\n      \"prettyUrlIdentifiers\": [\n        \"string\",\n        \"string\"\n      ],\n      \"previousUuids\": [\n        \"string\",\n        \"string\"\n      ],\n      \"version\": \"string\",\n      \"title\": {},\n      \"subTitle\": {},\n      \"type\": {},\n      \"category\": {},\n      \"peerReview\": true,\n      \"internationalPeerReview\": true,\n      \"language\": {},\n      \"translatedTitle\": {},\n      \"translatedSubTitle\": {},\n      \"totalNumberOfContributors\": 5912,\n      \"managingOrganization\": {},\n      \"submissionYear\": 8144,\n      \"mainResearchArea\": {},\n      \"articleProcessingCharge\": {},\n      \"bibliographicalNote\": {},\n      \"visibility\": {},\n      \"workflow\": {},\n      \"customDefinedFields\": {},\n      \"fundingText\": {},\n      \"abstract\": {},\n      \"systemName\": \"string\",\n      \"typeDiscriminator\": \"string\"\n    },\n    {\n      \"pureId\": 8816,\n      \"uuid\": \"8336ec74-544a-33c0-9175-f27759a610d9\",\n      \"createdBy\": \"string\",\n      \"createdDate\": \"1949-11-22T03:07:37.422Z\",\n      \"modifiedBy\": \"string\",\n      \"modifiedDate\": \"2010-06-12T22:51:59.559Z\",\n      \"portalUrl\": \"string\",\n      \"prettyUrlIdentifiers\": [\n        \"string\",\n        \"string\"\n      ],\n      \"previousUuids\": [\n        \"string\",\n        \"string\"\n      ],\n      \"version\": \"string\",\n      \"title\": {},\n      \"subTitle\": {},\n      \"type\": {},\n      \"category\": {},\n      \"peerReview\": false,\n      \"internationalPeerReview\": true,\n      \"language\": {},\n      \"translatedTitle\": {},\n      \"translatedSubTitle\": {},\n      \"totalNumberOfContributors\": 770,\n      \"managingOrganization\": {},\n      \"submissionYear\": 3562,\n      \"mainResearchArea\": {},\n      \"articleProcessingCharge\": {},\n      \"bibliographicalNote\": {},\n      \"visibility\": {},\n      \"workflow\": {},\n      \"customDefinedFields\": {},\n      \"fundingText\": {},\n      \"abstract\": {},\n      \"systemName\": \"string\",\n      \"typeDiscriminator\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ec5fcc12-7c0f-4f59-b22e-eb34114de1bc",
+          "name": "Create research output",
+          "request": {
+            "name": "Create research output",
+            "description": {
+              "content": "Create research output",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "research-outputs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e4e344ff-70be-4843-a838-eee4076b5868",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "research-outputs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"pureId\": 5180,\n  \"uuid\": \"f3982cad-7dab-d65d-7361-fefacdc647b1\",\n  \"createdBy\": \"string\",\n  \"createdDate\": \"1996-11-15T13:40:06.421Z\",\n  \"modifiedBy\": \"string\",\n  \"modifiedDate\": \"1996-09-19T01:15:08.371Z\",\n  \"portalUrl\": \"string\",\n  \"prettyUrlIdentifiers\": [\n    \"string\",\n    \"string\"\n  ],\n  \"previousUuids\": [\n    \"string\",\n    \"string\"\n  ],\n  \"version\": \"string\",\n  \"title\": {},\n  \"subTitle\": {},\n  \"type\": {},\n  \"category\": {},\n  \"peerReview\": true,\n  \"internationalPeerReview\": true,\n  \"language\": {},\n  \"translatedTitle\": {},\n  \"translatedSubTitle\": {},\n  \"totalNumberOfContributors\": 5947,\n  \"managingOrganization\": {},\n  \"submissionYear\": 6942,\n  \"mainResearchArea\": {},\n  \"articleProcessingCharge\": {},\n  \"bibliographicalNote\": {},\n  \"visibility\": {},\n  \"workflow\": {},\n  \"customDefinedFields\": {},\n  \"fundingText\": {},\n  \"abstract\": {},\n  \"systemName\": \"string\",\n  \"typeDiscriminator\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "13a3262f-dcb9-409a-8fe7-d814864cd8a0",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "research-outputs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "868fe33a-0515-4135-9354-205e6f3808b4",
+          "name": "Query operation for research outputs",
+          "request": {
+            "name": "Query operation for research outputs",
+            "description": {
+              "content": "Lists research outputs in the Pure instance that matches the provided query, similar to the GET version, instead of using parameters to alter the response, an JSON document is posted with the request. The JSON document contains fields for all the parameters available for the GET version, but also ad",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "research-outputs",
+                "search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f546ccbd-f583-4ad8-ba25-382957a91361",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "research-outputs",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 2629,\n  \"pageInformation\": {},\n  \"items\": [\n    {\n      \"pureId\": 7663,\n      \"uuid\": \"59b16d6d-9b95-8f57-a40a-c86af1e5cbff\",\n      \"createdBy\": \"string\",\n      \"createdDate\": \"1988-02-25T06:44:04.140Z\",\n      \"modifiedBy\": \"string\",\n      \"modifiedDate\": \"1962-02-23T01:22:23.190Z\",\n      \"portalUrl\": \"string\",\n      \"prettyUrlIdentifiers\": [\n        \"string\",\n        \"string\"\n      ],\n      \"previousUuids\": [\n        \"string\",\n        \"string\"\n      ],\n      \"version\": \"string\",\n      \"title\": {},\n      \"subTitle\": {},\n      \"type\": {},\n      \"category\": {},\n      \"peerReview\": false,\n      \"internationalPeerReview\": true,\n      \"language\": {},\n      \"translatedTitle\": {},\n      \"translatedSubTitle\": {},\n      \"totalNumberOfContributors\": 4199,\n      \"managingOrganization\": {},\n      \"submissionYear\": 4528,\n      \"mainResearchArea\": {},\n      \"articleProcessingCharge\": {},\n      \"bibliographicalNote\": {},\n      \"visibility\": {},\n      \"workflow\": {},\n      \"customDefinedFields\": {},\n      \"fundingText\": {},\n      \"abstract\": {},\n      \"systemName\": \"string\",\n      \"typeDiscriminator\": \"string\"\n    },\n    {\n      \"pureId\": 7946,\n      \"uuid\": \"191d8c3a-d2de-f2a6-d4e5-a84acba3f3ca\",\n      \"createdBy\": \"string\",\n      \"createdDate\": \"1982-01-19T03:02:44.853Z\",\n      \"modifiedBy\": \"string\",\n      \"modifiedDate\": \"2002-12-20T05:19:25.753Z\",\n      \"portalUrl\": \"string\",\n      \"prettyUrlIdentifiers\": [\n        \"string\",\n        \"string\"\n      ],\n      \"previousUuids\": [\n        \"string\",\n        \"string\"\n      ],\n      \"version\": \"string\",\n      \"title\": {},\n      \"subTitle\": {},\n      \"type\": {},\n      \"category\": {},\n      \"peerReview\": false,\n      \"internationalPeerReview\": false,\n      \"language\": {},\n      \"translatedTitle\": {},\n      \"translatedSubTitle\": {},\n      \"totalNumberOfContributors\": 9452,\n      \"managingOrganization\": {},\n      \"submissionYear\": 4415,\n      \"mainResearchArea\": {},\n      \"articleProcessingCharge\": {},\n      \"bibliographicalNote\": {},\n      \"visibility\": {},\n      \"workflow\": {},\n      \"customDefinedFields\": {},\n      \"fundingText\": {},\n      \"abstract\": {},\n      \"systemName\": \"string\",\n      \"typeDiscriminator\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6049f0e1-335f-4d3e-b05e-381b6c5ce185",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "research-outputs",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a2da0e93-355f-4d6c-8e13-8745d9ca1e68",
+          "name": "Get research output",
+          "request": {
+            "name": "Get research output",
+            "description": {
+              "content": "Get research output with specific UUID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "research-outputs",
+                ":uuid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "uuid",
+                  "description": "(Required) UUID of the desired research output"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "56264c6f-0fe4-410b-a6bc-0968fe721736",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "research-outputs",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "uuid",
+                      "description": "(Required) UUID of the desired research output"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"pureId\": 5180,\n  \"uuid\": \"f3982cad-7dab-d65d-7361-fefacdc647b1\",\n  \"createdBy\": \"string\",\n  \"createdDate\": \"1996-11-15T13:40:06.421Z\",\n  \"modifiedBy\": \"string\",\n  \"modifiedDate\": \"1996-09-19T01:15:08.371Z\",\n  \"portalUrl\": \"string\",\n  \"prettyUrlIdentifiers\": [\n    \"string\",\n    \"string\"\n  ],\n  \"previousUuids\": [\n    \"string\",\n    \"string\"\n  ],\n  \"version\": \"string\",\n  \"title\": {},\n  \"subTitle\": {},\n  \"type\": {},\n  \"category\": {},\n  \"peerReview\": true,\n  \"internationalPeerReview\": true,\n  \"language\": {},\n  \"translatedTitle\": {},\n  \"translatedSubTitle\": {},\n  \"totalNumberOfContributors\": 5947,\n  \"managingOrganization\": {},\n  \"submissionYear\": 6942,\n  \"mainResearchArea\": {},\n  \"articleProcessingCharge\": {},\n  \"bibliographicalNote\": {},\n  \"visibility\": {},\n  \"workflow\": {},\n  \"customDefinedFields\": {},\n  \"fundingText\": {},\n  \"abstract\": {},\n  \"systemName\": \"string\",\n  \"typeDiscriminator\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "74e5926e-9348-4405-8944-0919800c4db4",
+              "name": "The requested content have changed UUID",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "research-outputs",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "uuid",
+                      "description": "(Required) UUID of the desired research output"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Moved Permanently",
+              "code": 301,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "5bfb8a47-66ba-4799-b191-a6006bececde",
+              "name": "Resource not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "research-outputs",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "uuid",
+                      "description": "(Required) UUID of the desired research output"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f7ce1075-d5a7-425c-87f6-33aef0624536",
+          "name": "Update research output",
+          "request": {
+            "name": "Update research output",
+            "description": {
+              "content": "Update research output with specific UUID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "research-outputs",
+                ":uuid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "uuid",
+                  "description": "(Required) UUID of the research output to update"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8855ce95-2c4b-48c3-bcfc-4dad8e83ec0e",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "research-outputs",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "uuid",
+                      "description": "(Required) UUID of the research output to update"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"pureId\": 5180,\n  \"uuid\": \"f3982cad-7dab-d65d-7361-fefacdc647b1\",\n  \"createdBy\": \"string\",\n  \"createdDate\": \"1996-11-15T13:40:06.421Z\",\n  \"modifiedBy\": \"string\",\n  \"modifiedDate\": \"1996-09-19T01:15:08.371Z\",\n  \"portalUrl\": \"string\",\n  \"prettyUrlIdentifiers\": [\n    \"string\",\n    \"string\"\n  ],\n  \"previousUuids\": [\n    \"string\",\n    \"string\"\n  ],\n  \"version\": \"string\",\n  \"title\": {},\n  \"subTitle\": {},\n  \"type\": {},\n  \"category\": {},\n  \"peerReview\": true,\n  \"internationalPeerReview\": true,\n  \"language\": {},\n  \"translatedTitle\": {},\n  \"translatedSubTitle\": {},\n  \"totalNumberOfContributors\": 5947,\n  \"managingOrganization\": {},\n  \"submissionYear\": 6942,\n  \"mainResearchArea\": {},\n  \"articleProcessingCharge\": {},\n  \"bibliographicalNote\": {},\n  \"visibility\": {},\n  \"workflow\": {},\n  \"customDefinedFields\": {},\n  \"fundingText\": {},\n  \"abstract\": {},\n  \"systemName\": \"string\",\n  \"typeDiscriminator\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "c623e86b-92e3-4826-a22e-4a3e73210eb1",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "research-outputs",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "uuid",
+                      "description": "(Required) UUID of the research output to update"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2c367cd7-54b8-4a6e-abf3-13cf480bd2f5",
+              "name": "Resource not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "research-outputs",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "uuid",
+                      "description": "(Required) UUID of the research output to update"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "de07adc1-65e5-474a-9877-aca55062bf1d",
+              "name": "Version conflict",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "research-outputs",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "uuid",
+                      "description": "(Required) UUID of the research output to update"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5c2933ea-e5da-4743-bb70-464918302326",
+          "name": "Delete research output",
+          "request": {
+            "name": "Delete research output",
+            "description": {
+              "content": "Delete research output with specific UUID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "research-outputs",
+                ":uuid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "uuid",
+                  "description": "(Required) UUID of the research output"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "681f2901-5c9b-4cc3-9147-ae3335e6c580",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "research-outputs",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "uuid",
+                      "description": "(Required) UUID of the research output"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f927fe9f-b7ce-41fc-ad37-26ca0bad31f7",
+              "name": "Resource not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "research-outputs",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "uuid",
+                      "description": "(Required) UUID of the research output"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "cdb609b4-eb79-4f8d-a591-1e45c836da7b",
+              "name": "Conflict",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "research-outputs",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "uuid",
+                      "description": "(Required) UUID of the research output"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "cdfbdc36-87ce-4d1f-81e5-75ac23783a02",
+          "name": "A list of allowed research output types",
+          "request": {
+            "name": "A list of allowed research output types",
+            "description": {
+              "content": "Get a list of allowed types that can be used for the 'type' attribute of research outputs",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "research-outputs",
+                "allowed-types"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "32d2048f-c0d6-458e-8cc7-5f8d93170759",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "research-outputs",
+                    "allowed-types"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "03e249c0-41e5-4941-b0be-a3b996a105f3",
+          "name": "Lists available orderings",
+          "request": {
+            "name": "Lists available orderings",
+            "description": {
+              "content": "Lists all orderings available to the research output endpoint. These values can be used by the order parameter.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "research-outputs",
+                "orderings"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "72ad43de-3f7e-42ce-ac0a-3b8827f5efc1",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "research-outputs",
+                    "orderings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://scholar.hit.edu.cn/ws/api",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api-key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "67631bbe-29aa-4a5b-a632-dee8a95f81fd",
+    "name": "HIT Research Portal (Pure) person researchOutput API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Subset of the Elsevier Pure web services API exposed by the Harbin Institute of Technology research portal (scholar.hit.edu.cn). Covers read access to research outputs (publications) and persons (researchers). Derived faithfully from the live Pure OpenAPI document at /ws/api/openapi.json; deeply nested supporting schemas are simplified to generic objects. Original Pure API version 5.35.3-4.\n\nContact Support:\n Name: Harbin Institute of Technology Research Portal",
+      "type": "text/plain"
+    }
+  }
+}

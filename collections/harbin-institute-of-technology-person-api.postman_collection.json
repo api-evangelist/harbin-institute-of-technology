@@ -1,0 +1,1174 @@
+{
+  "item": [
+    {
+      "id": "4773c5f0-3800-4f59-b6c4-a8b53767747e",
+      "name": "person",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "2413abba-f037-473e-93c5-fdf569d9d8dc",
+          "name": "Lists all persons",
+          "request": {
+            "name": "Lists all persons",
+            "description": {
+              "content": "Lists all persons in the Pure instance. If you need to filter the persons returned, see the POST version which supports additional filtering.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "persons"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "size",
+                  "value": "<integer>",
+                  "description": "Number of returned persons per request."
+                },
+                {
+                  "disabled": false,
+                  "key": "offset",
+                  "value": "<integer>",
+                  "description": "The offset for the returned list. 0 or null value is from the start"
+                },
+                {
+                  "disabled": false,
+                  "key": "order",
+                  "value": "<string>",
+                  "description": "The order of the list, must be a value from /persons/orderings"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ec33bb23-a777-48fa-8a44-7b900b5c5fd0",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "persons"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "size",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "offset",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "order",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 1813,\n  \"pageInformation\": {},\n  \"items\": [\n    {\n      \"pureId\": 1074,\n      \"uuid\": \"96e1f45e-bc0c-f118-d6db-9bb918254707\",\n      \"createdBy\": \"string\",\n      \"createdDate\": \"1957-10-10T21:22:35.185Z\",\n      \"modifiedBy\": \"string\",\n      \"modifiedDate\": \"1973-04-18T22:07:03.579Z\",\n      \"portalUrl\": \"string\",\n      \"prettyUrlIdentifiers\": [\n        \"string\",\n        \"string\"\n      ],\n      \"previousUuids\": [\n        \"string\",\n        \"string\"\n      ],\n      \"version\": \"string\",\n      \"personExpertise\": {},\n      \"startDateAsResearcher\": \"1991-01-30\",\n      \"affiliationNote\": \"string\",\n      \"dateOfBirth\": \"1996-08-13\",\n      \"employeeStartDate\": \"1962-04-27\",\n      \"employeeEndDate\": \"1982-10-09\",\n      \"name\": {},\n      \"nationality\": {},\n      \"orcid\": \"string\",\n      \"orcidAuthenticated\": true,\n      \"cienciaId\": \"string\",\n      \"cienciaIdAuthenticated\": false,\n      \"privateAddress\": {},\n      \"selectedForProfileRefinementService\": false,\n      \"retirementDate\": \"1989-03-14\",\n      \"gender\": {},\n      \"visibility\": {},\n      \"willingToTakePhdStudents\": true,\n      \"willingToTakePhdStudentsDescription\": \"string\",\n      \"user\": {},\n      \"customDefinedFields\": {},\n      \"workflow\": {},\n      \"mainResearchArea\": {},\n      \"profiled\": false,\n      \"systemName\": \"string\"\n    },\n    {\n      \"pureId\": 8497,\n      \"uuid\": \"78195648-e1f9-a681-e684-a6dcab57c03c\",\n      \"createdBy\": \"string\",\n      \"createdDate\": \"1970-02-19T10:37:34.695Z\",\n      \"modifiedBy\": \"string\",\n      \"modifiedDate\": \"1954-02-17T04:23:04.527Z\",\n      \"portalUrl\": \"string\",\n      \"prettyUrlIdentifiers\": [\n        \"string\",\n        \"string\"\n      ],\n      \"previousUuids\": [\n        \"string\",\n        \"string\"\n      ],\n      \"version\": \"string\",\n      \"personExpertise\": {},\n      \"startDateAsResearcher\": \"1958-06-28\",\n      \"affiliationNote\": \"string\",\n      \"dateOfBirth\": \"1948-05-13\",\n      \"employeeStartDate\": \"1992-08-30\",\n      \"employeeEndDate\": \"2005-01-25\",\n      \"name\": {},\n      \"nationality\": {},\n      \"orcid\": \"string\",\n      \"orcidAuthenticated\": false,\n      \"cienciaId\": \"string\",\n      \"cienciaIdAuthenticated\": false,\n      \"privateAddress\": {},\n      \"selectedForProfileRefinementService\": false,\n      \"retirementDate\": \"2000-08-08\",\n      \"gender\": {},\n      \"visibility\": {},\n      \"willingToTakePhdStudents\": false,\n      \"willingToTakePhdStudentsDescription\": \"string\",\n      \"user\": {},\n      \"customDefinedFields\": {},\n      \"workflow\": {},\n      \"mainResearchArea\": {},\n      \"profiled\": false,\n      \"systemName\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "05c4b928-b11e-4806-ab32-e6ecbe0efe04",
+          "name": "Create person",
+          "request": {
+            "name": "Create person",
+            "description": {
+              "content": "Create person",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "persons"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "0aab8783-9f8a-42cb-aae5-acf25241d811",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "persons"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"pureId\": 2994,\n  \"uuid\": \"4afd1773-17cf-c953-42d0-8b779fedb49a\",\n  \"createdBy\": \"string\",\n  \"createdDate\": \"2008-08-09T14:15:43.004Z\",\n  \"modifiedBy\": \"string\",\n  \"modifiedDate\": \"2022-11-11T02:46:40.143Z\",\n  \"portalUrl\": \"string\",\n  \"prettyUrlIdentifiers\": [\n    \"string\",\n    \"string\"\n  ],\n  \"previousUuids\": [\n    \"string\",\n    \"string\"\n  ],\n  \"version\": \"string\",\n  \"personExpertise\": {},\n  \"startDateAsResearcher\": \"2019-09-04\",\n  \"affiliationNote\": \"string\",\n  \"dateOfBirth\": \"1954-10-28\",\n  \"employeeStartDate\": \"2008-06-22\",\n  \"employeeEndDate\": \"1989-10-09\",\n  \"name\": {},\n  \"nationality\": {},\n  \"orcid\": \"string\",\n  \"orcidAuthenticated\": true,\n  \"cienciaId\": \"string\",\n  \"cienciaIdAuthenticated\": true,\n  \"privateAddress\": {},\n  \"selectedForProfileRefinementService\": true,\n  \"retirementDate\": \"2005-04-14\",\n  \"gender\": {},\n  \"visibility\": {},\n  \"willingToTakePhdStudents\": true,\n  \"willingToTakePhdStudentsDescription\": \"string\",\n  \"user\": {},\n  \"customDefinedFields\": {},\n  \"workflow\": {},\n  \"mainResearchArea\": {},\n  \"profiled\": false,\n  \"systemName\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f0f92b59-b63e-42e4-8b46-e2550ed9301e",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "persons"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1215c7d3-cdbe-4f82-ab7d-d2ecab7f24cf",
+          "name": "Query operation for persons",
+          "request": {
+            "name": "Query operation for persons",
+            "description": {
+              "content": "Lists persons in the Pure instance that matches the provided query, similar to the GET version, instead of using parameters to alter the response, an JSON document is posted with the request. The JSON document contains fields for all the parameters available for the GET version, but also additional ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "persons",
+                "search"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f7eb487b-384b-4b3f-a6a1-b3c13f4a92db",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "persons",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"count\": 651,\n  \"pageInformation\": {},\n  \"items\": [\n    {\n      \"pureId\": 5464,\n      \"uuid\": \"76a84bc2-4a97-85fc-be72-8c5d573e636a\",\n      \"createdBy\": \"string\",\n      \"createdDate\": \"2011-10-13T18:54:03.781Z\",\n      \"modifiedBy\": \"string\",\n      \"modifiedDate\": \"1969-03-22T00:23:49.275Z\",\n      \"portalUrl\": \"string\",\n      \"prettyUrlIdentifiers\": [\n        \"string\",\n        \"string\"\n      ],\n      \"previousUuids\": [\n        \"string\",\n        \"string\"\n      ],\n      \"version\": \"string\",\n      \"personExpertise\": {},\n      \"startDateAsResearcher\": \"1953-02-23\",\n      \"affiliationNote\": \"string\",\n      \"dateOfBirth\": \"1951-07-05\",\n      \"employeeStartDate\": \"1953-02-06\",\n      \"employeeEndDate\": \"1965-08-10\",\n      \"name\": {},\n      \"nationality\": {},\n      \"orcid\": \"string\",\n      \"orcidAuthenticated\": false,\n      \"cienciaId\": \"string\",\n      \"cienciaIdAuthenticated\": true,\n      \"privateAddress\": {},\n      \"selectedForProfileRefinementService\": false,\n      \"retirementDate\": \"1992-06-08\",\n      \"gender\": {},\n      \"visibility\": {},\n      \"willingToTakePhdStudents\": false,\n      \"willingToTakePhdStudentsDescription\": \"string\",\n      \"user\": {},\n      \"customDefinedFields\": {},\n      \"workflow\": {},\n      \"mainResearchArea\": {},\n      \"profiled\": false,\n      \"systemName\": \"string\"\n    },\n    {\n      \"pureId\": 3086,\n      \"uuid\": \"5f74f5f7-c556-d547-d345-d0c2628695c2\",\n      \"createdBy\": \"string\",\n      \"createdDate\": \"1965-06-02T15:05:59.136Z\",\n      \"modifiedBy\": \"string\",\n      \"modifiedDate\": \"1999-09-25T20:30:23.071Z\",\n      \"portalUrl\": \"string\",\n      \"prettyUrlIdentifiers\": [\n        \"string\",\n        \"string\"\n      ],\n      \"previousUuids\": [\n        \"string\",\n        \"string\"\n      ],\n      \"version\": \"string\",\n      \"personExpertise\": {},\n      \"startDateAsResearcher\": \"1999-04-01\",\n      \"affiliationNote\": \"string\",\n      \"dateOfBirth\": \"2014-10-02\",\n      \"employeeStartDate\": \"1975-08-29\",\n      \"employeeEndDate\": \"2018-05-22\",\n      \"name\": {},\n      \"nationality\": {},\n      \"orcid\": \"string\",\n      \"orcidAuthenticated\": false,\n      \"cienciaId\": \"string\",\n      \"cienciaIdAuthenticated\": true,\n      \"privateAddress\": {},\n      \"selectedForProfileRefinementService\": true,\n      \"retirementDate\": \"2025-12-19\",\n      \"gender\": {},\n      \"visibility\": {},\n      \"willingToTakePhdStudents\": false,\n      \"willingToTakePhdStudentsDescription\": \"string\",\n      \"user\": {},\n      \"customDefinedFields\": {},\n      \"workflow\": {},\n      \"mainResearchArea\": {},\n      \"profiled\": true,\n      \"systemName\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2084d00d-91a5-4561-b3c1-814d6f63cfac",
+              "name": "Bad request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "persons",
+                    "search"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3b9f4c30-4ca9-4d60-8c26-dc8675e46827",
+          "name": "Get person",
+          "request": {
+            "name": "Get person",
+            "description": {
+              "content": "Get person with specific UUID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "persons",
+                ":uuid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "uuid",
+                  "description": "(Required) UUID of the desired person"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4e0c2a41-a457-4ed9-aa75-b2d84c3dc3fe",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "persons",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "uuid",
+                      "description": "(Required) UUID of the desired person"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"pureId\": 2994,\n  \"uuid\": \"4afd1773-17cf-c953-42d0-8b779fedb49a\",\n  \"createdBy\": \"string\",\n  \"createdDate\": \"2008-08-09T14:15:43.004Z\",\n  \"modifiedBy\": \"string\",\n  \"modifiedDate\": \"2022-11-11T02:46:40.143Z\",\n  \"portalUrl\": \"string\",\n  \"prettyUrlIdentifiers\": [\n    \"string\",\n    \"string\"\n  ],\n  \"previousUuids\": [\n    \"string\",\n    \"string\"\n  ],\n  \"version\": \"string\",\n  \"personExpertise\": {},\n  \"startDateAsResearcher\": \"2019-09-04\",\n  \"affiliationNote\": \"string\",\n  \"dateOfBirth\": \"1954-10-28\",\n  \"employeeStartDate\": \"2008-06-22\",\n  \"employeeEndDate\": \"1989-10-09\",\n  \"name\": {},\n  \"nationality\": {},\n  \"orcid\": \"string\",\n  \"orcidAuthenticated\": true,\n  \"cienciaId\": \"string\",\n  \"cienciaIdAuthenticated\": true,\n  \"privateAddress\": {},\n  \"selectedForProfileRefinementService\": true,\n  \"retirementDate\": \"2005-04-14\",\n  \"gender\": {},\n  \"visibility\": {},\n  \"willingToTakePhdStudents\": true,\n  \"willingToTakePhdStudentsDescription\": \"string\",\n  \"user\": {},\n  \"customDefinedFields\": {},\n  \"workflow\": {},\n  \"mainResearchArea\": {},\n  \"profiled\": false,\n  \"systemName\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4a13045d-91fd-465c-8dd4-3ec8d6dd4c17",
+              "name": "The requested content have changed UUID",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "persons",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "uuid",
+                      "description": "(Required) UUID of the desired person"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Moved Permanently",
+              "code": 301,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "48f4ab9c-8279-4fdd-b293-6e946a94e18c",
+              "name": "Resource not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "persons",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "uuid",
+                      "description": "(Required) UUID of the desired person"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a3364356-7165-47a4-9d25-47f544f61e87",
+          "name": "Update person",
+          "request": {
+            "name": "Update person",
+            "description": {
+              "content": "Update person with specific UUID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "persons",
+                ":uuid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "uuid",
+                  "description": "(Required) UUID of the person to update"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "054c16ce-cdc8-4e38-b480-ff65120de4e8",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "persons",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "uuid",
+                      "description": "(Required) UUID of the person to update"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"pureId\": 2994,\n  \"uuid\": \"4afd1773-17cf-c953-42d0-8b779fedb49a\",\n  \"createdBy\": \"string\",\n  \"createdDate\": \"2008-08-09T14:15:43.004Z\",\n  \"modifiedBy\": \"string\",\n  \"modifiedDate\": \"2022-11-11T02:46:40.143Z\",\n  \"portalUrl\": \"string\",\n  \"prettyUrlIdentifiers\": [\n    \"string\",\n    \"string\"\n  ],\n  \"previousUuids\": [\n    \"string\",\n    \"string\"\n  ],\n  \"version\": \"string\",\n  \"personExpertise\": {},\n  \"startDateAsResearcher\": \"2019-09-04\",\n  \"affiliationNote\": \"string\",\n  \"dateOfBirth\": \"1954-10-28\",\n  \"employeeStartDate\": \"2008-06-22\",\n  \"employeeEndDate\": \"1989-10-09\",\n  \"name\": {},\n  \"nationality\": {},\n  \"orcid\": \"string\",\n  \"orcidAuthenticated\": true,\n  \"cienciaId\": \"string\",\n  \"cienciaIdAuthenticated\": true,\n  \"privateAddress\": {},\n  \"selectedForProfileRefinementService\": true,\n  \"retirementDate\": \"2005-04-14\",\n  \"gender\": {},\n  \"visibility\": {},\n  \"willingToTakePhdStudents\": true,\n  \"willingToTakePhdStudentsDescription\": \"string\",\n  \"user\": {},\n  \"customDefinedFields\": {},\n  \"workflow\": {},\n  \"mainResearchArea\": {},\n  \"profiled\": false,\n  \"systemName\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2da0e0f1-c31e-43a0-b515-d900ec149688",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "persons",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "uuid",
+                      "description": "(Required) UUID of the person to update"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f68df6ee-eade-4db3-acea-8f0f12e0bcf1",
+              "name": "Resource not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "persons",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "uuid",
+                      "description": "(Required) UUID of the person to update"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8f10906e-316f-44e8-8042-2ef95731f826",
+              "name": "Version conflict",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "persons",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "uuid",
+                      "description": "(Required) UUID of the person to update"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {}
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f91b6e71-1f17-4911-b8e2-e9bfd4a6c9cc",
+          "name": "Delete person",
+          "request": {
+            "name": "Delete person",
+            "description": {
+              "content": "Delete person with specific UUID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "persons",
+                ":uuid"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "uuid",
+                  "description": "(Required) UUID of the person"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d532c5fc-6ad8-4677-b9f6-569c833e2fdd",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "persons",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "uuid",
+                      "description": "(Required) UUID of the person"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "503bdcc4-900b-4a21-a95b-f041d0f77956",
+              "name": "Resource not found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "persons",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "uuid",
+                      "description": "(Required) UUID of the person"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f7eff923-e4d8-486a-9179-0e4040012720",
+              "name": "Conflict",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "persons",
+                    ":uuid"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "uuid",
+                      "description": "(Required) UUID of the person"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b06da02c-a46c-4afc-9ef5-38643cda8429",
+          "name": "A list of allowed main research areas",
+          "request": {
+            "name": "A list of allowed main research areas",
+            "description": {
+              "content": "Get a list of allowed main research areas associated with the person",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "persons",
+                "allowed-main-research-areas"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d3ff1031-360a-41ae-82ca-ce7a3c876641",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "persons",
+                    "allowed-main-research-areas"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bf6752e1-031a-484a-b385-7f3d36be6f15",
+          "name": "Lists available orderings",
+          "request": {
+            "name": "Lists available orderings",
+            "description": {
+              "content": "Lists all orderings available to the person endpoint. These values can be used by the order parameter.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "persons",
+                "orderings"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b06dfda2-62bb-470b-a3f0-ab6fd752efba",
+              "name": "Successful operation",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "persons",
+                    "orderings"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://scholar.hit.edu.cn/ws/api",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api-key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "90f6dfeb-a963-4113-a75a-65aa17a5e5f8",
+    "name": "HIT Research Portal (Pure) person API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Subset of the Elsevier Pure web services API exposed by the Harbin Institute of Technology research portal (scholar.hit.edu.cn). Covers read access to research outputs (publications) and persons (researchers). Derived faithfully from the live Pure OpenAPI document at /ws/api/openapi.json; deeply nested supporting schemas are simplified to generic objects. Original Pure API version 5.35.3-4.\n\nContact Support:\n Name: Harbin Institute of Technology Research Portal",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,158 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "HIT Research Portal (Pure) person API",
+    "version": "5.35.3-4"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api-key",
+      "value": "{{api-key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "person",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Lists all persons",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://scholar.hit.edu.cn/ws/api/persons",
+            "params": [
+              {
+                "name": "size",
+                "value": "",
+                "type": "query",
+                "description": "Number of returned persons per request."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "The offset for the returned list. 0 or null value is from the start"
+              },
+              {
+                "name": "order",
+                "value": "",
+                "type": "query",
+                "description": "The order of the list, must be a value from /persons/orderings"
+              }
+            ]
+          },
+          "docs": "Lists all persons in the Pure instance. If you need to filter the persons returned, see the POST version which supports additional filtering."
+        },
+        {
+          "info": {
+            "name": "Create person",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://scholar.hit.edu.cn/ws/api/persons"
+          },
+          "docs": "Create person"
+        },
+        {
+          "info": {
+            "name": "Query operation for persons",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://scholar.hit.edu.cn/ws/api/persons/search"
+          },
+          "docs": "Lists persons in the Pure instance that matches the provided query, similar to the GET version, instead of using parameters to alter the response, an JSON document is posted with the request. The JSON document contains fields for all the parameters available for the GET version, but also additional "
+        },
+        {
+          "info": {
+            "name": "Get person",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://scholar.hit.edu.cn/ws/api/persons/:uuid",
+            "params": [
+              {
+                "name": "uuid",
+                "value": "",
+                "type": "path",
+                "description": "UUID of the desired person"
+              }
+            ]
+          },
+          "docs": "Get person with specific UUID."
+        },
+        {
+          "info": {
+            "name": "Update person",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://scholar.hit.edu.cn/ws/api/persons/:uuid",
+            "params": [
+              {
+                "name": "uuid",
+                "value": "",
+                "type": "path",
+                "description": "UUID of the person to update"
+              }
+            ]
+          },
+          "docs": "Update person with specific UUID."
+        },
+        {
+          "info": {
+            "name": "Delete person",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://scholar.hit.edu.cn/ws/api/persons/:uuid",
+            "params": [
+              {
+                "name": "uuid",
+                "value": "",
+                "type": "path",
+                "description": "UUID of the person"
+              }
+            ]
+          },
+          "docs": "Delete person with specific UUID."
+        },
+        {
+          "info": {
+            "name": "A list of allowed main research areas",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://scholar.hit.edu.cn/ws/api/persons/allowed-main-research-areas"
+          },
+          "docs": "Get a list of allowed main research areas associated with the person"
+        },
+        {
+          "info": {
+            "name": "Lists available orderings",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://scholar.hit.edu.cn/ws/api/persons/orderings"
+          },
+          "docs": "Lists all orderings available to the person endpoint. These values can be used by the order parameter."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

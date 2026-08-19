@@ -1,0 +1,158 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "HIT Research Portal (Pure) person researchOutput API",
+    "version": "5.35.3-4"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api-key",
+      "value": "{{api-key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "researchOutput",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Lists all research outputs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://scholar.hit.edu.cn/ws/api/research-outputs",
+            "params": [
+              {
+                "name": "size",
+                "value": "",
+                "type": "query",
+                "description": "Number of returned research outputs per request."
+              },
+              {
+                "name": "offset",
+                "value": "",
+                "type": "query",
+                "description": "The offset for the returned list. 0 or null value is from the start"
+              },
+              {
+                "name": "order",
+                "value": "",
+                "type": "query",
+                "description": "The order of the list, must be a value from /research-outputs/orderings"
+              }
+            ]
+          },
+          "docs": "Lists all research outputs in the Pure instance. If you need to filter the research outputs returned, see the POST version which supports additional filtering."
+        },
+        {
+          "info": {
+            "name": "Create research output",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://scholar.hit.edu.cn/ws/api/research-outputs"
+          },
+          "docs": "Create research output"
+        },
+        {
+          "info": {
+            "name": "Query operation for research outputs",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://scholar.hit.edu.cn/ws/api/research-outputs/search"
+          },
+          "docs": "Lists research outputs in the Pure instance that matches the provided query, similar to the GET version, instead of using parameters to alter the response, an JSON document is posted with the request. The JSON document contains fields for all the parameters available for the GET version, but also ad"
+        },
+        {
+          "info": {
+            "name": "Get research output",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://scholar.hit.edu.cn/ws/api/research-outputs/:uuid",
+            "params": [
+              {
+                "name": "uuid",
+                "value": "",
+                "type": "path",
+                "description": "UUID of the desired research output"
+              }
+            ]
+          },
+          "docs": "Get research output with specific UUID."
+        },
+        {
+          "info": {
+            "name": "Update research output",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://scholar.hit.edu.cn/ws/api/research-outputs/:uuid",
+            "params": [
+              {
+                "name": "uuid",
+                "value": "",
+                "type": "path",
+                "description": "UUID of the research output to update"
+              }
+            ]
+          },
+          "docs": "Update research output with specific UUID."
+        },
+        {
+          "info": {
+            "name": "Delete research output",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://scholar.hit.edu.cn/ws/api/research-outputs/:uuid",
+            "params": [
+              {
+                "name": "uuid",
+                "value": "",
+                "type": "path",
+                "description": "UUID of the research output"
+              }
+            ]
+          },
+          "docs": "Delete research output with specific UUID."
+        },
+        {
+          "info": {
+            "name": "A list of allowed research output types",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://scholar.hit.edu.cn/ws/api/research-outputs/allowed-types"
+          },
+          "docs": "Get a list of allowed types that can be used for the 'type' attribute of research outputs"
+        },
+        {
+          "info": {
+            "name": "Lists available orderings",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://scholar.hit.edu.cn/ws/api/research-outputs/orderings"
+          },
+          "docs": "Lists all orderings available to the research output endpoint. These values can be used by the order parameter."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
