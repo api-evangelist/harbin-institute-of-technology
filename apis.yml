@@ -65,6 +65,8 @@ apis:
   humanURL: https://scholar.hit.edu.cn/en/
   baseURL: https://scholar.hit.edu.cn/ws/oai
   tags:
+  - Persons
+  tags_raw:
   - person
   properties:
   - type: OpenAPI
@@ -85,7 +87,8 @@ apis:
     The researchOutput API from Harbin Institute of Technology — 5 operation(s) for researchoutput.
   humanURL: https://scholar.hit.edu.cn/en/
   baseURL: https://scholar.hit.edu.cn/ws/oai
-  tags:
+  tags: []
+  tags_raw:
   - researchOutput
   properties:
   - type: OpenAPI
