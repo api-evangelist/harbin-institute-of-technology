@@ -116,6 +116,9 @@ apis:
   - type: x-json-ld
     url: json-ld/harbin-institute-of-technology-context.jsonld
 common:
+  - type: CapabilityMap
+    url: capabilities/harbin-institute-of-technology-capability-edges.yml
+    name: Harbin Institute of Technology Business Capability Map
   - type: AgenticAccess
     url: agentic-access/harbin-institute-of-technology-agentic-access.yml
   - type: VulnerabilityDisclosure
