@@ -1,139 +1,293 @@
 ---
 aid: harbin-institute-of-technology
 name: Harbin Institute of Technology
+x-type: university
+x-category: Technical University
 description: >-
-  Harbin Institute of Technology (HIT) is a public research university in Harbin,
-  Heilongjiang, China, founded in 1920 and overseen by the Ministry of Industry
-  and Information Technology, with additional campuses in Weihai and Shenzhen. It
-  is ranked #252 in the QS World University Rankings 2025. HIT does not operate a
-  formal public developer portal, but its Elsevier Pure research portal
-  (scholar.hit.edu.cn) exposes standard machine-readable interfaces: an OAI-PMH
-  endpoint (verified live, OpenAIRE CERIF 1.2 profile) and RSS feeds of research
-  outputs and researcher profiles. Most other institutional systems (library OPAC,
-  institutional repository, student/SSO systems) are gated and do not publish open,
-  documented APIs.
+  Harbin Institute of Technology (HIT, 哈尔滨工业大学) is a public technical research university in
+  Harbin, Heilongjiang, China, founded in 1920, administered by the Ministry of Industry and
+  Information Technology, and a member of the C9 League, with additional campuses at Weihai and
+  Shenzhen. HIT operates NO public developer programme, no API documentation, no developer portal
+  and no API key issuance of any kind, and this profile should be read as recording that absence.
+  Its one institution-operated machine-readable surface is a Shibboleth SAML 2.0 identity provider
+  at idp.hit.edu.cn, scoped to hit.edu.cn — genuinely HIT's own engineering, though the metadata
+  document it publishes is the unedited Shibboleth template and expired in 2020. Every other
+  machine-readable surface is a tenancy on Elsevier Pure running under HIT's own hostname
+  (scholar.hit.edu.cn): a live and anonymously harvestable OAI-PMH endpoint carrying the OpenAIRE
+  CERIF 1.2 profile, RSS feeds of publications and researcher profiles, and a Pure web services API
+  that is credential-gated and whose contract belongs to Elsevier, not to HIT. The data in those
+  surfaces is HIT's; the contracts are not.
 type: Index
 deliveryModel:
-  model: saas
+  model: none
   open_source: false
-  commercial: true
-  callable_host: true
-  label: Hosted service · you call their endpoint
+  commercial: false
+  callable_host: false
+  label: No provider-operated API — institution-operated identity infrastructure plus vendor tenancies
   confidence: high
   source:
-  - openapi
-  - pricing
-  generated: '2026-08-28'
-  method: derived
+  - probed
+  generated: '2026-09-01'
+  method: probed
+  note: >-
+    Corrected 2026-09-01. The prior block was derived from an Elsevier Pure OpenAPI document held in
+    this repo and asserted a commercial, callable SaaS host. That contract was Elsevier's and has
+    been removed; HIT operates no callable API of its own.
 accessModel:
-  pricing: free
-  onboarding: self-serve
+  pricing: not-applicable
+  onboarding: none
   trial: false
-  try_now: true
+  try_now: false
   public: false
-  label: Free · Self-serve signup
+  label: No developer programme — no signup, no key, no plan
   confidence: high
   source:
-  - plans
-  - authentication
-  generated: '2026-07-22'
-  method: derived
-position: Consumer
-access: 3rd-Party
+  - probed
+  generated: '2026-09-01'
+  method: probed
+position: Consuming
+access: Internal
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/harbin-institute-of-technology.png
 url: https://raw.githubusercontent.com/api-evangelist/harbin-institute-of-technology/refs/heads/main/apis.yml
 tags:
-  - Education
-  - Higher Education
   - University
+  - Higher Education
+  - Education
+  - China
+  - Technical University
+  - C9 League
   - Research
   - Scholarly
+  - Identity Federation
+  - Research Repository
   - OAI-PMH
-  - China
 created: '2026-06-03'
-modified: '2026-06-03'
+modified: '2026-09-01'
 specificationVersion: '0.23'
+x-coverage:
+  state: none
+  reason: tenant_only
+  detail: >-
+    No institution-authored API contract exists to capture. Every machine-readable DATA surface HIT
+    exposes is an Elsevier Pure tenancy on HIT's own hostname — the OAI-PMH endpoint, the RSS feeds
+    and the Pure web services API all belong to one Pure deployment at scholar.hit.edu.cn whose
+    Identify response names purehosted@elsevier.com as administrator and whose OpenAPI document is
+    titled "Pure API" with contact pure-support@elsevier.com. HIT's one genuinely
+    institution-operated machine-readable artifact is its Shibboleth SAML IdP metadata, which is
+    identity infrastructure rather than an API and is recorded as such. Probing found no course
+    catalog API (jwc.hit.edu.cn, the academic affairs site, is administratively DISABLED and serves
+    a notice page), no open data portal (data.hit.edu.cn does not resolve), no library catalog API,
+    no api./open./oapi. host, no security.txt, no robots.txt and no llms.txt. Searching was done on
+    both the Chinese and English surfaces; this is not a language barrier.
+  evidence:
+  - url: https://scholar.hit.edu.cn/ws/api/openapi.json
+    status: 200
+    detail: 'Served anonymously but titled "Pure API", contact pure-support@elsevier.com, 827 paths — Elsevier''s contract, not HIT''s.'
+  - url: https://scholar.hit.edu.cn/ws/api/research-outputs?size=1
+    status: 401
+    detail: Pure data paths are credential-gated.
+  - url: https://scholar.hit.edu.cn/ws/oai?verb=Identify
+    status: 200
+    detail: 'Live OAI-PMH, but repositoryName "Pure OAI Repository", adminEmail purehosted@elsevier.com. Intermittently reachable from outside China: 200 on 5 of 9 attempts, connection timeout otherwise, never an HTTP error.'
+  - url: https://idp.hit.edu.cn/idp/shibboleth
+    status: 200
+    detail: HIT's own SAML 2.0 IdP metadata, scope hit.edu.cn — the one institution-operated machine-readable surface found.
+  - url: https://jwc.hit.edu.cn/
+    status: 200
+    detail: 'Soft-200. Academic affairs (教务处) site body reads "站点 教务处 已禁用" — site disabled. No course catalog surface.'
+  - url: https://data.hit.edu.cn/
+    status: 0
+    detail: DNS does not resolve. No open data portal.
+  - url: https://www.hit.edu.cn/.well-known/security.txt
+    status: 404
+    detail: No security.txt.
+  - url: dns:scholar.hit.edu.cn
+    status: 200
+    detail: >-
+      CNAME to purealb-1397755226.cn-northwest-1.elb.amazonaws.com.cn — an Elsevier Pure AWS China
+      load balancer. Note for the cohort detector: AWS ELB hostnames are UNIQUE PER DEPLOYMENT, so
+      a cohort-reuse rule ("a host more than one institution points at") can never fire on them.
+      The vendor signal is the product prefix "purealb-", not the full hostname.
 apis:
-- aid: harbin-institute-of-technology:pure-rss
-  name: HIT Research Portal RSS Feeds
+- aid: harbin-institute-of-technology:hit-shibboleth-idp
+  name: HIT Shibboleth Identity Provider (SAML 2.0)
+  x-operator: institution
+  x-surface-class: IdentityFederation
   description: >-
-    RSS 2.0 feeds (with Dublin Core extensions) from the HIT Elsevier Pure research portal. The research
-    output feed returns the latest publications; a persons feed lists researcher profiles. Verified live
-    and returning items.
+    Harbin Institute of Technology's own Shibboleth identity provider, self-hosted on HIT's
+    registrable domain and asserting the scope hit.edu.cn. Publishes a SAML 2.0 EntityDescriptor
+    anonymously at /idp/shibboleth with IDPSSODescriptor and AttributeAuthorityDescriptor roles,
+    six key descriptors, and SSO/SLO endpoints over HTTP-Redirect, HTTP-POST, HTTP-POST-SimpleSign
+    and SOAP. This is HIT's own engineering rather than a vendor contract running under HIT's name,
+    and it is the strongest institution-operated machine-readable surface in this profile. Caveat,
+    recorded rather than hidden: the served document is the unedited Shibboleth distribution
+    template — it retains the stock "This is example metadata only" banner and an mdui:DisplayName
+    of "A Name for the IdP at idp.hit.edu.cn" — and its validUntil is 2020-02-14, so a conforming
+    SAML consumer would reject it as expired. The IdP is live; its published descriptor is stale.
+    HIT does not appear in eduGAIN; the federation context is domestic (CARSI/CERNET).
+  humanURL: https://idp.hit.edu.cn/
+  baseURL: https://idp.hit.edu.cn/idp/shibboleth
+  entityID: https://idp.hit.edu.cn/idp/shibboleth
+  x-dns:
+    record: A
+    value: 219.217.226.63
+    detail: >-
+      Direct A record on HIT campus address space (CERNET, Harbin) with NO vendor CNAME —
+      corroborating that this IdP is HIT-operated infrastructure rather than a hosted tenancy.
+      Contrast scholar.hit.edu.cn, which CNAMEs to an Elsevier AWS load balancer.
+  tags:
+  - Identity Federation
+  - Shibboleth
+  - SAML
+  - Authentication
+  properties:
+  - type: IdentityFederation
+    url: https://idp.hit.edu.cn/idp/shibboleth
+  - type: x-conformance
+    url: conformance/harbin-institute-of-technology-conformance.yml
+- aid: harbin-institute-of-technology:hit-pure-oai-pmh
+  name: HIT Research Portal OAI-PMH Endpoint
+  x-operator: tenant
+  x-surface-class: ResearchRepository
+  x-tenancy:
+    vendor: Elsevier
+    product: Pure
+    vendor_evidence: 'OAI-PMH Identify: repositoryName "Pure OAI Repository", adminEmail purehosted@elsevier.com'
+    dns_evidence: >-
+      scholar.hit.edu.cn is a CNAME to purealb-1397755226.cn-northwest-1.elb.amazonaws.com.cn —
+      an AWS China (Ningxia) load balancer named "purealb". HIT's hostname is a vanity CNAME onto
+      Elsevier's hosted Pure infrastructure.
+  description: >-
+    OAI-PMH 2.0 harvesting endpoint for HIT's research outputs, persons and datasets, on HIT's own
+    hostname and anonymously callable — a ListRecords over publications:all returned 358,884 bytes
+    of oai_dc records with no credential. Serves six metadata prefixes (mods, mods_swepub, oai_dc,
+    xmetadiss, qdc, nl_didl) across 99 sets, and declares the OpenAIRE Guidelines for CRIS Managers
+    CERIF-XML 1.2 profile with a dedicated openaire set. RECORDED AS A TENANCY, NOT AS HIT'S
+    CONTRACT: the Identify response names the repository "Pure OAI Repository" and its administrator
+    purehosted@elsevier.com, so the software and the hosting are Elsevier's. The data and the
+    deployment are HIT's. Note the earliestDatestamp of 2025-10-30 — this Pure instance is less than
+    a year old. Reachability from outside China is intermittent at the connection layer; when it
+    connects it always returns 200 with a full body.
+  humanURL: https://scholar.hit.edu.cn/en/
+  baseURL: https://scholar.hit.edu.cn/ws/oai
+  tags:
+  - OAI-PMH
+  - Research Repository
+  - Scholarly
+  - Harvesting
+  - Pure
+  properties:
+  - type: ResearchRepository
+    url: https://scholar.hit.edu.cn/en/
+  - type: x-conformance
+    url: conformance/harbin-institute-of-technology-conformance.yml
+- aid: harbin-institute-of-technology:hit-pure-rss
+  name: HIT Research Portal RSS Feeds
+  x-operator: tenant
+  x-surface-class: ResearchRepository
+  x-tenancy:
+    vendor: Elsevier
+    product: Pure
+  description: >-
+    RSS 2.0 feeds with Dublin Core extensions emitted by HIT's Elsevier Pure research portal. The
+    publications feed returns the latest research outputs; the persons feed lists researcher
+    profiles. Both verified live and returning items anonymously. The feed format and the portal
+    are Pure's; the content is HIT's.
   humanURL: https://scholar.hit.edu.cn/en/
   baseURL: https://scholar.hit.edu.cn/en/publications/?format=rss
   tags:
-  - Research
   - RSS
   - Feed
   - Scholarly
+  - Research
   - Pure
   properties:
-  - type: Documentation
-    url: https://scholar.hit.edu.cn/en/
-- aid: harbin-institute-of-technology:harbin-institute-of-technology-person-api
-  name: Harbin Institute of Technology person API
-  description: The person API from Harbin Institute of Technology — 5 operation(s) for person.
-  humanURL: https://scholar.hit.edu.cn/en/
-  baseURL: https://scholar.hit.edu.cn/ws/oai
-  tags:
-  - Persons
-  tags_raw:
-  - person
-  properties:
-  - type: OpenAPI
-    url: openapi/harbin-institute-of-technology-person-api-openapi.yml
-  - type: Documentation
-    url: https://scholar.hit.edu.cn/en/
-  - type: JSONSchema
-    url: json-schema/harbin-institute-of-technology-research-output-schema.json
-  - type: x-vocabulary
-    url: vocabulary/harbin-institute-of-technology-vocabulary.yml
-  - type: x-rules
-    url: rules/harbin-institute-of-technology-rules.yml
-  - type: x-json-ld
-    url: json-ld/harbin-institute-of-technology-context.jsonld
-- aid: harbin-institute-of-technology:harbin-institute-of-technology-researchoutput-api
-  name: Harbin Institute of Technology researchOutput API
+  - type: BlogRSS
+    url: https://scholar.hit.edu.cn/en/publications/?format=rss
+  - type: x-feed-persons
+    url: https://scholar.hit.edu.cn/en/persons/?format=rss
+- aid: harbin-institute-of-technology:elsevier-pure-tenancy
+  name: Elsevier Pure Web Services API — HIT Tenancy
+  x-operator: tenant
+  x-surface-class: ResearchRepository
+  x-contract-owner: elsevier
+  x-tenancy:
+    vendor: Elsevier
+    product: Pure
+    version: 5.36.2-1
+    vendor_evidence: 'info.title "Pure API"; info.contact.email pure-support@elsevier.com; 827 paths'
+    dns_evidence: >-
+      scholar.hit.edu.cn CNAMEs to purealb-1397755226.cn-northwest-1.elb.amazonaws.com.cn
+      (AWS cn-northwest-1). Third independent confirmation of the tenancy, alongside the OpenAPI
+      contact address and the OAI-PMH admin address.
   description: >-
-    The researchOutput API from Harbin Institute of Technology — 5 operation(s) for researchoutput.
+    HIT's tenancy on the Elsevier Pure web services API, deployed at scholar.hit.edu.cn/ws/api.
+    THE RELATIONSHIP IS RECORDED HERE; THE CONTRACT IS DELIBERATELY NOT SAVED IN THIS REPO. The
+    live document at /ws/api/openapi.json is titled "Pure API", carries contact
+    pure-support@elsevier.com, declares a relative server of /ws/api and describes 827 paths — it
+    is Elsevier's product specification, identical in substance across every Pure customer, and it
+    belongs against Elsevier's own repo, not HIT's. Data paths are credential-gated (HTTP 401,
+    Elsevier-issued api-key); there is no HIT-facing process to request one. This entry exists so
+    the institutional fact survives without crediting HIT for Elsevier's engineering.
   humanURL: https://scholar.hit.edu.cn/en/
-  baseURL: https://scholar.hit.edu.cn/ws/oai
+  baseURL: https://scholar.hit.edu.cn/ws/api
   tags:
-  - Research Output
-  tags_raw:
-  - researchOutput
+  - Research Repository
+  - Pure
+  - Vendor Tenancy
+  - Scholarly
   properties:
-  - type: OpenAPI
-    url: openapi/harbin-institute-of-technology-researchoutput-api-openapi.yml
   - type: Documentation
     url: https://scholar.hit.edu.cn/en/
-  - type: JSONSchema
-    url: json-schema/harbin-institute-of-technology-research-output-schema.json
-  - type: x-vocabulary
-    url: vocabulary/harbin-institute-of-technology-vocabulary.yml
-  - type: x-rules
-    url: rules/harbin-institute-of-technology-rules.yml
-  - type: x-json-ld
-    url: json-ld/harbin-institute-of-technology-context.jsonld
+  - type: x-authentication
+    url: authentication/harbin-institute-of-technology-authentication.yml
+- aid: harbin-institute-of-technology:ror-registration
+  name: ROR Registration — Harbin Institute of Technology
+  x-operator: registry
+  x-surface-class: IdentifierRegistry
+  description: >-
+    HIT is registered in the Research Organization Registry with ROR ID 01yqg2h08, carrying the
+    names Harbin Institute of Technology, 哈尔滨工业大学 and the acronym HIT, and linking to
+    www.hit.edu.cn. A membership fact about the institution, recorded as such. The registry's own
+    contract is ROR's and is not saved here. Probing found NO corresponding DataCite provider or
+    repository record and NO Crossref member record for HIT — both registries return zero results
+    for Harbin — so no DOI-registration membership is claimed.
+  humanURL: https://ror.org/01yqg2h08
+  baseURL: https://api.ror.org/v2/organizations/01yqg2h08
+  tags:
+  - Registry
+  - ROR
+  - Identifiers
+  properties:
+  - type: Registry
+    url: https://ror.org/01yqg2h08
 common:
-  - type: CapabilityMap
-    url: capabilities/harbin-institute-of-technology-capability-edges.yml
-    name: Harbin Institute of Technology Business Capability Map
-  - type: AgenticAccess
-    url: agentic-access/harbin-institute-of-technology-agentic-access.yml
+  - type: Website
+    url: https://en.hit.edu.cn/
+  - type: WebsiteChinese
+    url: https://www.hit.edu.cn/
+  - type: ResearchRepository
+    url: https://scholar.hit.edu.cn/en/
+  - type: IdentityFederation
+    url: https://idp.hit.edu.cn/idp/shibboleth
+  - type: Conformance
+    url: conformance/harbin-institute-of-technology-conformance.yml
+  - type: Authentication
+    url: authentication/harbin-institute-of-technology-authentication.yml
   - type: VulnerabilityDisclosure
     url: security/harbin-institute-of-technology-vulnerability-disclosure.yml
   - type: DomainSecurity
     url: security/harbin-institute-of-technology-domain-security.yml
-  - type: Authentication
-    url: authentication/harbin-institute-of-technology-authentication.yml
-  - type: Website
-    url: https://en.hit.edu.cn/
-  - type: DeveloperPortal
-    url: https://scholar.hit.edu.cn/en/
-  - type: GitHub
+  - type: News
+    url: https://today.hit.edu.cn/
+  - type: Library
+    url: https://lib.hit.edu.cn/
+  - type: GitHubOrganization
     url: https://github.com/HITSZ-HLT
+    name: Harbin Institute of Technology, Human Language Technology (HITSZ-HLT)
+    note: >-
+      A research-group organisation at the HIT Shenzhen campus, 59 public repositories. Recorded
+      honestly as a lab org — HIT operates no institution-wide GitHub organisation.
   - type: LinkedIn
     url: https://www.linkedin.com/school/harbin-institute-of-technology/
   - type: Plans
