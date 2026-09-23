@@ -1,0 +1,131 @@
+# authorship: hand-authored by API Evangelist tooling from live HTTP probes,
+# 2026-09-01 university pipeline run. `method: probed` below is the university
+# contract's vocabulary; x-method carries the value the provenance manifest reads.
+x-method: manual
+generated: '2026-09-01'
+method: probed
+source: live HTTP probes of scholar.hit.edu.cn and idp.hit.edu.cn, 2026-09-01
+description: >-
+  Domain-standard conformance for Harbin Institute of Technology, measured against the Kin Score
+  `education` regime standards[]. Every entry below was confirmed by fetching the endpoint and
+  reading the response body, not by reading a prose claim or a link. Standards in the regime that
+  were probed and NOT found are recorded under `not_found` so the absence is a measurement rather
+  than a silence.
+standards:
+- standard: oai-pmh
+  name: Open Archives Initiative Protocol for Metadata Harvesting 2.0
+  status: conformant
+  x-operator: tenant
+  operator_note: >-
+    The endpoint sits on HIT's own registrable domain and serves HIT's research metadata, but the
+    Identify response self-identifies as "Pure OAI Repository" with adminEmail purehosted@elsevier.com
+    — the software and the hosting are Elsevier's. HIT operates the deployment and owns the data;
+    Elsevier operates the service. Recorded as a tenant surface, not as HIT engineering.
+  endpoint: https://scholar.hit.edu.cn/ws/oai
+  anonymous: true
+  evidence:
+  - url: https://scholar.hit.edu.cn/ws/oai?verb=Identify
+    status: 200
+    content_type: application/xml
+    detail: >-
+      OAI-PMH protocolVersion 2.0; repositoryName "Pure OAI Repository";
+      adminEmail purehosted@elsevier.com; earliestDatestamp 2025-10-30T15:45:19Z;
+      granularity YYYY-MM-DDThh:mm:ssZ; deletedRecord no.
+  - url: https://scholar.hit.edu.cn/ws/oai?verb=ListMetadataFormats
+    status: 200
+    detail: 'six metadata prefixes served: mods, mods_swepub, oai_dc, xmetadiss, qdc, nl_didl'
+  - url: https://scholar.hit.edu.cn/ws/oai?verb=ListSets
+    status: 200
+    detail: >-
+      99 sets. Non-year sets: persons:all, publications:all, publications:withFiles,
+      datasets:all, openaire.
+  - url: https://scholar.hit.edu.cn/ws/oai?verb=ListRecords&metadataPrefix=oai_dc&set=publications:all
+    status: 200
+    detail: 358,884 bytes of real oai_dc records returned anonymously — the endpoint is callable, not merely present.
+  profile:
+    name: OpenAIRE Guidelines for CRIS Managers, CERIF-XML 1.2
+    declared_at: xsi:schemaLocation on every OAI-PMH response
+    namespace: https://www.openaire.eu/cerif-profile/1.2/
+    set: openaire
+- standard: shibboleth
+  name: Shibboleth Identity Provider
+  status: conformant
+  x-operator: institution
+  operator_note: >-
+    HIT's own Shibboleth IdP, on HIT's own registrable domain, asserting HIT's own scope. This is the
+    single strongest institution-operated machine-readable surface in this repo — it is HIT's
+    engineering, not a vendor's contract running under HIT's name.
+  entity_id: https://idp.hit.edu.cn/idp/shibboleth
+  scope: hit.edu.cn
+  evidence:
+  - url: https://idp.hit.edu.cn/idp/shibboleth
+    status: 200
+    content_type: application/xml;charset=utf-8
+    detail: >-
+      14,377-byte SAML 2.0 <EntityDescriptor> with entityID https://idp.hit.edu.cn/idp/shibboleth,
+      <shibmd:Scope>hit.edu.cn</shibmd:Scope>, IDPSSODescriptor + AttributeAuthorityDescriptor roles,
+      and 6 KeyDescriptors.
+  - url: https://idp.hit.edu.cn/idp/profile/SAML2/Redirect/SSO
+    status: 400
+    detail: >-
+      Live Shibboleth IdP "Web Login Service" view rejecting a bare GET carrying no SAMLRequest.
+      A 400 here is the handler working, not a dead endpoint.
+  caveats:
+  - >-
+    The served metadata document is the UNEDITED Shibboleth distribution template: it carries the
+    stock "This is example metadata only. Do *NOT* supply it as is without review" banner and an
+    mdui:DisplayName of "A Name for the IdP at idp.hit.edu.cn". The IdP itself is real and deployed;
+    the descriptor it publishes has never been customised.
+  - >-
+    validUntil is 2020-02-14T04:50:57.622Z — the published metadata expired over six years ago and
+    a conforming SAML consumer would reject it. The endpoint is live; the document is stale.
+- standard: saml
+  name: SAML 2.0
+  status: conformant
+  x-operator: institution
+  evidence:
+  - url: https://idp.hit.edu.cn/idp/shibboleth
+    status: 200
+    detail: >-
+      protocolSupportEnumeration includes urn:oasis:names:tc:SAML:2.0:protocol and
+      urn:oasis:names:tc:SAML:1.1:protocol. SSO/SLO endpoints published for HTTP-Redirect,
+      HTTP-POST and HTTP-POST-SimpleSign bindings; SOAP ArtifactResolution and AttributeQuery
+      on port 8443.
+- standard: orcid
+  name: ORCID
+  status: partial
+  x-operator: registry
+  detail: >-
+    HIT researchers carry ORCID iDs and the Pure portal surfaces them, but no HIT institutional
+    ORCID membership record could be evidenced. Researcher-asserted affiliation is not an
+    institutional membership and is not counted as one here.
+  evidence:
+  - url: https://pub.orcid.org/v3.0/expanded-search/?q=affiliation-org-name:%22Harbin%20Institute%20of%20Technology%22
+    status: 200
+    detail: 16,493 ORCID records assert a Harbin Institute of Technology affiliation — researcher-asserted, not an institutional membership.
+not_found_note: >-
+  Probed against the education regime's standards[] and not evidenced. Recorded so the absence is
+  a measurement. No conformance was invented to fill a slot.
+not_found:
+- standard: datacite
+  detail: 'api.datacite.org/providers?query=Harbin and /clients?query=Harbin both return total 0 — no DataCite provider or repository record.'
+  evidence:
+  - url: https://api.datacite.org/clients?query=Harbin
+    status: 200
+- standard: crossref
+  detail: 'api.crossref.org/members?query=harbin returns total-results 0 — HIT is not a Crossref member.'
+  evidence:
+  - url: https://api.crossref.org/members?query=harbin
+    status: 200
+- standard: scim
+  detail: No SCIM endpoint found on any HIT host probed.
+- standard: lti
+  detail: No LTI tool or platform registration surface found.
+- standard: oneroster
+  detail: No OneRoster endpoint found.
+- standard: ed-fi
+  detail: No Ed-Fi ODS found. Ed-Fi is a US K-12 standard and is not expected here.
+- standard: caliper
+  detail: No Caliper analytics endpoint found.
+- standard: qti
+  detail: No QTI assessment surface found.

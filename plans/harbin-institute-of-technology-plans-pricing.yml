@@ -4,7 +4,7 @@ schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main
 provider: Harbin Institute of Technology
 providerId: harbin-institute-of-technology
 created: '2026-06-03'
-modified: '2026-06-03'
+modified: '2026-09-01'
 reconciled: false
 tags:
 - Education
@@ -12,11 +12,18 @@ tags:
 - University
 - Plans
 description: >-
-  Harbin Institute of Technology is a non-commercial higher-education institution; its APIs are not sold
-  as a commercial product. Public APIs (library, repository, course, and open-metadata
-  interfaces) are offered free of charge, typically for non-commercial use. Most
-  administrative and identity APIs are not openly self-service and require institutional
-  affiliation, credentials, or federation membership rather than a paid plan.
+  Harbin Institute of Technology is a non-commercial higher-education institution and sells no API
+  access. There is no developer programme, no key issuance, and no priced tier. The single
+  anonymously callable machine-readable surface on an HIT host is the OAI-PMH endpoint of its
+  Elsevier Pure research portal, which is free and unauthenticated. Everything else is gated by
+  campus identity (SAML / SSO) or by an Elsevier-issued Pure API key, neither of which is a plan.
+correction:
+  date: '2026-09-01'
+  note: >-
+    Corrected 2026-09-01. The prior description asserted free public "library, repository, course,
+    and open-metadata interfaces". Only the open-metadata (OAI-PMH) surface was ever evidenced;
+    the library, repository-API and course-catalog interfaces were higher-education boilerplate
+    and are removed.
 notes: >-
   No published per-seat or per-call commercial pricing. "Free / Open" reflects open
   public endpoints; "Affiliation / Credentialed" reflects access gated by institutional

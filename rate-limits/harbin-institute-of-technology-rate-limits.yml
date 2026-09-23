@@ -4,7 +4,7 @@ schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main
 provider: Harbin Institute of Technology
 providerId: harbin-institute-of-technology
 created: '2026-06-03'
-modified: '2026-06-03'
+modified: '2026-09-01'
 reconciled: false
 tags:
 - Education
@@ -12,10 +12,18 @@ tags:
 - University
 - Rate Limiting
 description: >-
-  Harbin Institute of Technology does not publish a unified public rate-limit table across its APIs. Open
-  metadata and harvesting endpoints (OAI-PMH, IIIF, library) may throttle large-scale
-  or automated harvesting; clients should harvest politely, honor Retry-After, and
-  contact the relevant service for bulk access.
+  Harbin Institute of Technology publishes no rate-limit table of any kind, and operates no API
+  programme that would carry one. The one anonymously callable machine-readable surface on an HIT
+  host is the OAI-PMH endpoint at scholar.hit.edu.cn/ws/oai, which is an Elsevier Pure deployment;
+  it declares no limits and no Retry-After behaviour was observed. Harvest politely and honor
+  Retry-After if it appears.
+correction:
+  date: '2026-09-01'
+  note: >-
+    Corrected 2026-09-01. The prior description asserted throttling on "OAI-PMH, IIIF, library"
+    endpoints. No IIIF surface and no library API were ever evidenced for HIT; both were carried
+    from generic higher-education boilerplate rather than from a probe. Only the OAI-PMH endpoint
+    is real.
 notes: Confirm per-service limits with each API's documentation; harvest responsibly.
 sources:
 - https://raw.githubusercontent.com/api-evangelist/harbin-institute-of-technology/refs/heads/main/apis.yml

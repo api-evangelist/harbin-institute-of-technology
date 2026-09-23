@@ -1,0 +1,96 @@
+# authorship: hand-authored by API Evangelist tooling from live HTTP probes,
+# 2026-09-01 university pipeline run. `method: probed` below is the university
+# contract's vocabulary; x-method carries the value the provenance manifest reads.
+x-method: manual
+generated: '2026-09-01'
+method: probed
+source: live HTTP probes of scholar.hit.edu.cn and idp.hit.edu.cn, 2026-09-01
+description: >-
+  Authentication posture across the surfaces Harbin Institute of Technology actually exposes.
+  Re-authored 2026-09-01 from live probes. The previous version of this file was DERIVED from
+  Elsevier's Pure OpenAPI document and described Elsevier's api-key scheme as though it were HIT's;
+  it was removed along with the rest of the vendor-derived set.
+surfaces:
+- name: HIT research portal OAI-PMH endpoint
+  url: https://scholar.hit.edu.cn/ws/oai
+  x-operator: tenant
+  auth: none
+  anonymous: true
+  evidence:
+  - url: https://scholar.hit.edu.cn/ws/oai?verb=ListRecords&metadataPrefix=oai_dc&set=publications:all
+    status: 200
+    detail: 358,884 bytes of records returned with no credential presented.
+- name: HIT research portal RSS feeds
+  url: https://scholar.hit.edu.cn/en/publications/?format=rss
+  x-operator: tenant
+  auth: none
+  anonymous: true
+  evidence:
+  - url: https://scholar.hit.edu.cn/en/publications/?format=rss
+    status: 200
+    detail: application/rss+xml, 108,758 bytes, RSS 2.0 with Dublin Core extensions.
+  - url: https://scholar.hit.edu.cn/en/persons/?format=rss
+    status: 200
+    detail: application/rss+xml, 51,699 bytes.
+- name: Elsevier Pure web services API (vendor contract, HIT tenancy)
+  url: https://scholar.hit.edu.cn/ws/api
+  x-operator: tenant
+  auth: api_key
+  anonymous: false
+  detail: >-
+    The Pure API is deployed on HIT's host but is NOT anonymously callable. The unversioned
+    OpenAPI document is served without a credential; every data path returns 401. The api-key
+    scheme is Elsevier's, issued per Pure customer, and is not an HIT-operated credential.
+    No HIT-facing request process for a key was found.
+  evidence:
+  - url: https://scholar.hit.edu.cn/ws/api/research-outputs?size=1
+    status: 401
+    detail: 'application/problem+json — {"title":"Request not authorized.","detail":"Full authentication is required to access this resource"}'
+  - url: https://scholar.hit.edu.cn/ws/api/524.0/openapi.json
+    status: 401
+    detail: Versioned contract itself is credential-gated.
+  - url: https://scholar.hit.edu.cn/ws/api/openapi.json
+    status: 200
+    detail: >-
+      Unversioned contract IS served anonymously — and it is Elsevier's, titled "Pure API",
+      contact pure-support@elsevier.com, 827 paths. Not HIT's contract.
+- name: HIT Shibboleth Identity Provider
+  url: https://idp.hit.edu.cn/idp/shibboleth
+  x-operator: institution
+  auth: saml2
+  anonymous: false
+  detail: >-
+    HIT's own SAML 2.0 IdP. Metadata document is served anonymously; authentication itself is
+    institutional credential against HIT's directory. This is the one authentication surface in
+    this repo that HIT operates rather than rents.
+  entity_id: https://idp.hit.edu.cn/idp/shibboleth
+  scope: hit.edu.cn
+  bindings:
+  - HTTP-Redirect
+  - HTTP-POST
+  - HTTP-POST-SimpleSign
+  - SOAP
+  evidence:
+  - url: https://idp.hit.edu.cn/idp/shibboleth
+    status: 200
+    detail: SAML 2.0 EntityDescriptor, 14,377 bytes, IDPSSODescriptor + AttributeAuthorityDescriptor.
+  - url: https://idp.hit.edu.cn/idp/profile/SAML2/Redirect/SSO
+    status: 400
+    detail: Live SSO handler rejecting a bare GET with no SAMLRequest.
+- name: HIT unified identity authentication platform (统一身份认证平台)
+  url: https://ids.hit.edu.cn/
+  x-operator: institution
+  auth: institutional_login
+  anonymous: false
+  detail: >-
+    Campus SSO front door for staff and students. Interactive login only; no documented
+    machine interface and no published API. Recorded as a surface, not as an API.
+  evidence:
+  - url: https://ids.hit.edu.cn/
+    status: 200
+    detail: HTML login page, title 统一身份认证平台.
+notes:
+- >-
+  No HIT-issued API credential of any kind was found. Every credential-gated surface here is
+  gated by either Elsevier (Pure api-key) or campus identity (SAML / SSO). There is no
+  developer key-issuance process to document because there is no HIT developer programme.
