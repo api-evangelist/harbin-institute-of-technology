@@ -1,4 +1,4 @@
-# Harbin Institute of Technology (harbin-institute-of-technology)
+# Harbin Institute of Technology
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,47 +64,156 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Harbin Institute of Technology (HIT) is a public research university in Harbin, Heilongjiang, China, founded in 1920 and overseen by the Ministry of Industry and Information Technology, with additional campuses in Weihai and Shenzhen. It is ranked #252 in the QS World University Rankings 2025. HIT does not run a formal public developer portal; its most concrete machine-readable footprint is the Elsevier Pure research portal at scholar.hit.edu.cn, which exposes a live OAI-PMH endpoint and RSS feeds.
+Harbin Institute of Technology (HIT, 哈尔滨工业大学) is a public technical research university in Harbin, Heilongjiang, China, founded in 1920, administered by the Ministry of Industry and Information Technology, and a member of the C9 League, with additional campuses at Weihai and Shenzhen. HIT operates NO public developer programme, no API documentation, no developer portal and no API key issuance of any kind, and this profile should be read as recording that absence. Its one institution-operated machine-readable surface is a Shibboleth SAML 2.0 identity provider at idp.hit.edu.cn, scoped to hit.edu.cn — genuinely HIT's own engineering, though the metadata document it publishes is the unedited Shibboleth template and expired in 2020. Every other machine-readable surface is a tenancy on Elsevier Pure running under HIT's own hostname (scholar.hit.edu.cn): a live and anonymously harvestable OAI-PMH endpoint carrying the OpenAIRE CERIF 1.2 profile, RSS feeds of publications and researcher profiles, and a Pure web services API that is credential-gated and whose contract belongs to Elsevier, not to HIT. The data in those surfaces is HIT's; the contracts are not.
 
-- APIs.json: https://raw.githubusercontent.com/api-evangelist/harbin-institute-of-technology/refs/heads/main/apis.yml
-- Run with Naftiko: https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=harbin-institute-of-technology-api-evangelist&utm_content=repo
+**Areas:** University · Higher Education · Education · China · Technical University · C9 League · Research · Scholarly · Identity Federation · Research Repository · OAI-PMH
 
-## Type
+## Harbin Institute of Technology on APIs.io
 
-Index / Consumer / 3rd-Party
+Everything profiled for Harbin Institute of Technology is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/harbin-institute-of-technology/](https://apis.io/providers/harbin-institute-of-technology/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (5)
 
-Education, Higher Education, University, Research, Scholarly, OAI-PMH, China
+- [HIT Shibboleth Identity Provider (SAML 2.0)](https://apis.io/apis/harbin-institute-of-technology/hit-shibboleth-idp/) — Harbin Institute of Technology's own Shibboleth identity provider, self-hosted on HIT's registrable domain and asserting the scope hit.edu.cn. Publishes a…
+- [HIT Research Portal OAI-PMH Endpoint](https://apis.io/apis/harbin-institute-of-technology/hit-pure-oai-pmh/) — OAI-PMH 2.0 harvesting endpoint for HIT's research outputs, persons and datasets, on HIT's own hostname and anonymously callable — a ListRecords over…
+- [HIT Research Portal RSS Feeds](https://apis.io/apis/harbin-institute-of-technology/hit-pure-rss/) — RSS 2.0 feeds with Dublin Core extensions emitted by HIT's Elsevier Pure research portal. The publications feed returns the latest research outputs; the…
+- [Elsevier Pure Web Services API — HIT Tenancy](https://apis.io/apis/harbin-institute-of-technology/elsevier-pure-tenancy/) — HIT's tenancy on the Elsevier Pure web services API, deployed at scholar.hit.edu.cn/ws/api. THE RELATIONSHIP IS RECORDED HERE; THE CONTRACT IS DELIBERATELY…
+- [ROR Registration — Harbin Institute of Technology](https://apis.io/apis/harbin-institute-of-technology/ror-registration/) — HIT is registered in the Research Organization Registry with ROR ID 01yqg2h08, carrying the names Harbin Institute of Technology, 哈尔滨工业大学 and the acronym…
 
-## APIs
+### Published properties
 
-- **HIT Research Portal OAI-PMH** — OAI-PMH metadata harvesting for the HIT Elsevier Pure research system (PURE Persons and PURE publications sets, OpenAIRE CERIF 1.2). Base: `https://scholar.hit.edu.cn/ws/oai`. Docs: https://scholar.hit.edu.cn/en/
-- **HIT Research Portal RSS Feeds** — RSS 2.0 feeds of research output and researcher profiles. Base: `https://scholar.hit.edu.cn/en/publications/?format=rss`. Docs: https://scholar.hit.edu.cn/en/
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## Plans / Rate Limits / FinOps
+#### JSON Schema (2)
 
-- Plans & Pricing: [plans/harbin-institute-of-technology-plans-pricing.yml](plans/harbin-institute-of-technology-plans-pricing.yml)
-- Rate Limits: [rate-limits/harbin-institute-of-technology-rate-limits.yml](rate-limits/harbin-institute-of-technology-rate-limits.yml)
-- FinOps: [finops/harbin-institute-of-technology-finops.yml](finops/harbin-institute-of-technology-finops.yml)
+The data models the API reads and writes.
 
-## Timestamps
+- [Moved to /providers/harbin-institute-of-technology/](https://apis.io/schemas/harbin-institute-of-technology/harbin-institute-of-technology-person/)
+- [Moved to /providers/harbin-institute-of-technology/](https://apis.io/schemas/harbin-institute-of-technology/harbin-institute-of-technology-research-output/)
 
-- Created: 2026-06-03
-- Modified: 2026-06-03
+#### JSON Structure (2)
 
-## Common Properties
+Data models expressed in JSON Structure.
 
-- Website: https://en.hit.edu.cn/
-- Developer Portal (research): https://scholar.hit.edu.cn/en/
-- GitHub (affiliated research org): https://github.com/HITSZ-HLT
-- LinkedIn: https://www.linkedin.com/school/harbin-institute-of-technology/
-- Review: [review.yml](review.yml)
+- [Moved to /providers/harbin-institute-of-technology/](https://apis.io/json-structure/harbin-institute-of-technology/harbin-institute-of-technology-person-structure/)
+- [Moved to /providers/harbin-institute-of-technology/](https://apis.io/json-structure/harbin-institute-of-technology/harbin-institute-of-technology-research-output-structure/)
 
-## Notes
+#### JSON-LD (1)
 
-All endpoints were probed live during research and no APIs or endpoints were fabricated. The Pure OAI-PMH endpoint was verified via `ListSets` (HTTP 200); the `Identify` verb returns a configuration 500, a known Pure quirk, while other verbs work. The library institutional repository (ir.lib.hit.edu.cn) returned 403 and exposes no documented public API from outside China. Affiliated GitHub organizations (e.g. HITSZ-HLT, hitsz-ids) belong to individual research groups rather than being institution-wide API publishers.
+Linked-data contexts for the provider's vocabulary.
 
-## Maintainers
+- [Moved to /providers/harbin-institute-of-technology/](https://apis.io/jsonld/harbin-institute-of-technology/harbin-institute-of-technology-context/)
 
-- Kin Lane — kin@apievangelist.com
+#### Vocabulary (1)
+
+The provider's domain terms, defined.
+
+- [HIT Research Portal (Pure) Vocabulary](https://apis.io/vocabularies/harbin-institute-of-technology/harbin-institute-of-technology-vocabulary/)
+
+#### Examples (3)
+
+Example requests and responses.
+
+- [Moved to /providers/harbin-institute-of-technology/](https://apis.io/examples/harbin-institute-of-technology/harbin-institute-of-technology-person-get-example/)
+- [Moved to /providers/harbin-institute-of-technology/](https://apis.io/examples/harbin-institute-of-technology/harbin-institute-of-technology-research-outputs-list-example/)
+- [Moved to /providers/harbin-institute-of-technology/](https://apis.io/examples/harbin-institute-of-technology/harbin-institute-of-technology-research-outputs-search-example/)
+
+#### Collections (2)
+
+Postman and Open Collection request collections.
+
+- [Moved to /providers/harbin-institute-of-technology/](https://apis.io/collections/harbin-institute-of-technology/open-harbin-institute-of-technology-person-api/)
+- [Moved to /providers/harbin-institute-of-technology/](https://apis.io/collections/harbin-institute-of-technology/open-harbin-institute-of-technology-researchoutput-api/)
+
+#### Governance rules (2)
+
+Spectral rulesets for the provider's contracts.
+
+- [Moved to /providers/harbin-institute-of-technology/](https://apis.io/rules/harbin-institute-of-technology/harbin-institute-of-technology-jsonschema-spectral-rules/)
+- [Moved to /providers/harbin-institute-of-technology/](https://apis.io/rules/harbin-institute-of-technology/harbin-institute-of-technology-rules/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Harbin Institute Of Technology Authentication](https://apis.io/security/harbin-institute-of-technology/harbin-institute-of-technology-authentication/)
+- [Harbin Institute Of Technology Domain Security](https://apis.io/security/harbin-institute-of-technology/harbin-institute-of-technology-domain-security/)
+- [Harbin Institute Of Technology Vulnerability Disclosure](https://apis.io/security/harbin-institute-of-technology/harbin-institute-of-technology-vulnerability-disclosure/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Harbin Institute Of Technology Plans Pricing](https://apis.io/plans/harbin-institute-of-technology/harbin-institute-of-technology-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Harbin Institute Of Technology Rate Limits](https://apis.io/rate-limits/harbin-institute-of-technology/harbin-institute-of-technology-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Harbin Institute Of Technology Finops](https://apis.io/finops/harbin-institute-of-technology/harbin-institute-of-technology-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://en.hit.edu.cn/)
+- [GitHub](https://github.com/HITSZ-HLT)
+
+## API Evangelist rating
+
+**Kin Score 15.3** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 72.3 |
+| Contract quality | 4.4 |
+| Contract governance | 0.0 |
+| Operational transparency | 7.9 |
+| Developer ergonomics | 21.4 |
+| Access clarity | 5.3 |
+
+**Agent readiness 3.1** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 22.5** — Education & Research
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/harbin-institute-of-technology/](https://apis.io/providers/harbin-institute-of-technology/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Harbin Institute of Technology: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/harbin-institute-of-technology/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
